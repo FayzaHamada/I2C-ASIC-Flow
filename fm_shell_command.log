@@ -1,0 +1,236 @@
+#@ # 
+#@ # Running fm_shell Version V-2023.12 for linux64 -- Nov 16, 2023
+#@ # Date:   Fri May 10 20:04:31 2024
+#@ # Run by: vlsi@elc-vlsi-sm-1-lnx
+#@ 
+
+source /eda/synopsys/fm/V-2023.12/admin/setup/.synopsys_fm.setup
+#@ # -- Starting source /eda/synopsys/fm/V-2023.12/admin/setup/.synopsys_fm.setup
+
+#@ #
+#@ # .synopsys_fm.setup: Initialization File for Formality
+#@ #
+#@ 
+#@ 
+#@ #
+#@ # Enable stack trace output on fatal.  Not available for all architectures.
+#@ #
+#@ if { $sh_arch == "sparc" || $sh_arch == "sparcOS5" || \
+#@      $sh_arch == "hp700" || $sh_arch == "hpux10" } {
+#@   set_unix_variable SYNOPSYS_TRACE ""
+#@ }
+#@ 
+#@ #
+#@ # Variable settings
+#@ #
+#@ set sh_new_variable_message true
+#@ 
+#@ #
+#@ # Synopsys strongly recommends that you uncomment the following command
+#@ # in order to set sh_command_abbrev_mode to the value "Command-Line-Only".
+#@ # Command abbreviation is intended as an interactive convenience.  Using
+#@ # abbreviations in scripts can cause commands to fail in subsequent releases.
+#@ # 
+#@ #set sh_command_abbrev_mode "Command-Line-Only"
+#@ 
+#@ #
+#@ # Some useful aliases
+#@ #
+#@ alias list_commands		help
+#@ 
+#@ #
+#@ # The alias of q to quit is commented out.  Remove the comment 
+#@ # character if you want this alias.  Some users find that having 
+#@ # this particular alias causes problems when mixed with page-mode
+#@ # for reports - an accidental repeated 'q' not only cancels the
+#@ # output but exits the tool.
+#@ #
+#@ #alias q quit
+#@ # -- End source /eda/synopsys/fm/V-2023.12/admin/setup/.synopsys_fm.setup
+
+start_gui &
+set cdf_gen_file 15054.fm.cdf;
+source /eda/synopsys/fm/V-2023.12/auxx/gui/fm/.convertFmCmd2Tcl.tcl
+#@ # -- Starting source /eda/synopsys/fm/V-2023.12/auxx/gui/fm/.convertFmCmd2Tcl.tcl
+
+#@ 
+#@ ##--- Final output command definition file for "Formality Commands"
+#@ 
+#@ ## Guard
+#@ if {![info exists cdf_gen_file]} {
+#@   echo "Error: fm_shell cannot generate cdf file. Check if GUI version is compatible.";
+#@ }
+#@ set ::fmcdf    $cdf_gen_file
+#@ 
+#@ set ::fmgroup "Formality Commands"
+#@ set ::gpFile $::fmcdf.gpfile
+#@ 
+#@ # Get all groups
+#@ set result [help -groups > $::gpFile]
+#@ set fp [open $::gpFile r]
+#@ set ::gp_file_data [read $fp]
+#@ close $fp
+#@ 
+#@ ##-! Get each command
+#@ proc get_command_def _cmd {
+#@    set cmd [string trim $_cmd]
+#@    if { [string compare $cmd ""] != 0 } {
+#@       if { [string compare $cmd "_version"] != 0 } {
+#@       #echo "Definiton: $cmd"
+#@       set defn [get_defined_commands -detail $cmd]
+#@       set defn [regsub -all \n $defn ""]
+#@       #echo defn=$defn
+#@       puts  $::allCmds $defn
+#@       }
+#@    }
+#@ }
+#@ 
+#@ ##-! Generate cmds for a group
+#@ proc get_command_from_gp _group {
+#@    set group [string trim $_group]
+#@    set gcmdfile $::fmcdf.$group
+#@ 
+#@    ##========== or use redirect $gcmdfile {help "$group"}
+#@    set cresult [help "$group" > $gcmdfile]
+#@ 
+#@    ##==========
+#@    set pfi [open $gcmdfile "r"]
+#@    while {1 == 1} {
+#@     set cnt [gets $pfi row]
+#@     if {$cnt < 0} {break} ; ## Check if eof
+#@     set word [lindex [split $row "#"] 0]  ; # find_compare_points # comments...
+#@     #puts $allCmds $word
+#@     # strip header
+#@     set header "$group: "
+#@     if { $word != $header } {
+#@         get_command_def $word
+#@     }
+#@    }
+#@    close $pfi
+#@    ##==========
+#@ 
+#@    # Clean up
+#@    file delete -force  $gcmdfile
+#@ }
+#@ 
+#@ #-!  Process data file
+#@ #================================
+#@ set ::allCmds [open $::fmcdf "w"]
+#@ set gp [split $::gp_file_data "\n"]
+#@ foreach group $gp {
+#@      # do some line processing here
+#@     if { $group == $::fmgroup } {
+#@        # echo *** Generate cmd from group \"$group\"
+#@        get_command_from_gp $group
+#@     } else {
+#@        # echo Other cmd group $group
+#@     }
+#@ }
+#@ close $::allCmds
+#@ file delete -force  $::gpFile
+#@ # -- End source /eda/synopsys/fm/V-2023.12/auxx/gui/fm/.convertFmCmd2Tcl.tcl
+
+set_svf -append { /home/vlsi/Music/Flow/synth/default.svf } 
+set_svf -append { ./home/vlsi/Music/Flow/synth/default.svf }
+set_svf ./home/vlsi/Music/Flow/synth/default.svf
+set_svf ./home/vlsi/Music/Flow/synth/default.svf
+set_svf -append { ./home/vlsi/Music/Flow/synth/default.svf }
+set_svf -append { /home/vlsi/Music/Flow/synth/default.svf }
+man 
+startr_gui &
+start_gui &
+set cdf_gen_file 15701.fm.cdf;
+source /eda/synopsys/fm/V-2023.12/auxx/gui/fm/.convertFmCmd2Tcl.tcl
+#@ # -- Starting source /eda/synopsys/fm/V-2023.12/auxx/gui/fm/.convertFmCmd2Tcl.tcl
+
+#@ 
+#@ ##--- Final output command definition file for "Formality Commands"
+#@ 
+#@ ## Guard
+#@ if {![info exists cdf_gen_file]} {
+#@   echo "Error: fm_shell cannot generate cdf file. Check if GUI version is compatible.";
+#@ }
+#@ set ::fmcdf    $cdf_gen_file
+#@ 
+#@ set ::fmgroup "Formality Commands"
+#@ set ::gpFile $::fmcdf.gpfile
+#@ 
+#@ # Get all groups
+#@ set result [help -groups > $::gpFile]
+#@ set fp [open $::gpFile r]
+#@ set ::gp_file_data [read $fp]
+#@ close $fp
+#@ 
+#@ ##-! Get each command
+#@ proc get_command_def _cmd {
+#@    set cmd [string trim $_cmd]
+#@    if { [string compare $cmd ""] != 0 } {
+#@       if { [string compare $cmd "_version"] != 0 } {
+#@       #echo "Definiton: $cmd"
+#@       set defn [get_defined_commands -detail $cmd]
+#@       set defn [regsub -all \n $defn ""]
+#@       #echo defn=$defn
+#@       puts  $::allCmds $defn
+#@       }
+#@    }
+#@ }
+#@ 
+#@ ##-! Generate cmds for a group
+#@ proc get_command_from_gp _group {
+#@    set group [string trim $_group]
+#@    set gcmdfile $::fmcdf.$group
+#@ 
+#@    ##========== or use redirect $gcmdfile {help "$group"}
+#@    set cresult [help "$group" > $gcmdfile]
+#@ 
+#@    ##==========
+#@    set pfi [open $gcmdfile "r"]
+#@    while {1 == 1} {
+#@     set cnt [gets $pfi row]
+#@     if {$cnt < 0} {break} ; ## Check if eof
+#@     set word [lindex [split $row "#"] 0]  ; # find_compare_points # comments...
+#@     #puts $allCmds $word
+#@     # strip header
+#@     set header "$group: "
+#@     if { $word != $header } {
+#@         get_command_def $word
+#@     }
+#@    }
+#@    close $pfi
+#@    ##==========
+#@ 
+#@    # Clean up
+#@    file delete -force  $gcmdfile
+#@ }
+#@ 
+#@ #-!  Process data file
+#@ #================================
+#@ set ::allCmds [open $::fmcdf "w"]
+#@ set gp [split $::gp_file_data "\n"]
+#@ foreach group $gp {
+#@      # do some line processing here
+#@     if { $group == $::fmgroup } {
+#@        # echo *** Generate cmd from group \"$group\"
+#@        get_command_from_gp $group
+#@     } else {
+#@        # echo Other cmd group $group
+#@     }
+#@ }
+#@ close $::allCmds
+#@ file delete -force  $::gpFile
+#@ # -- End source /eda/synopsys/fm/V-2023.12/auxx/gui/fm/.convertFmCmd2Tcl.tcl
+
+read_verilog -container r -libname WORK -05 { /home/vlsi/Music/Flow/synth/RTL/i2c_master_bit_ctrl.v /home/vlsi/Music/Flow/synth/RTL/i2c_master_byte_ctrl.v /home/vlsi/Music/Flow/synth/RTL/i2c_master_defines.v /home/vlsi/Music/Flow/synth/RTL/i2c_master_top.v /home/vlsi/Music/Flow/synth/RTL/timescale.v } 
+set_top r:/WORK/i2c_master_top 
+read_verilog -container i -libname WORK -05 { /home/vlsi/Music/Flow/synth/outputs/i2c_master_top.v } 
+read_db { /eda/synopsys/SAED90nm_EDK_10072017/SAED90_EDK/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_max_lth.db } 
+set_top i:/WORK/i2c_master_top 
+match 
+verify 
+set_dont_verify {r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[0] } 
+verify 
+set_dont_verify {r:/WORK/i2c_master_top/byte_controller/ack_out_reg } 
+set_dont_verify {r:/WORK/i2c_master_top/byte_controller/ack_out_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[10] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[11] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[12] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[13] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[14] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[15] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[16] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[1] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[2] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[3] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[4] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[6] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[7] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[8] r:/WORK/i2c_master_top/byte_controller/bit_controller/c_state_reg[9] r:/WORK/i2c_master_top/byte_controller/bit_controller/cmd_ack_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/sda_chk_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/sda_oen_reg r:/WORK/i2c_master_top/byte_controller/c_state_reg[0] r:/WORK/i2c_master_top/byte_controller/c_state_reg[2] r:/WORK/i2c_master_top/byte_controller/c_state_reg[3] r:/WORK/i2c_master_top/byte_controller/c_state_reg[4] r:/WORK/i2c_master_top/byte_controller/cmd_ack_reg r:/WORK/i2c_master_top/byte_controller/core_cmd_reg[0] r:/WORK/i2c_master_top/byte_controller/core_cmd_reg[1] r:/WORK/i2c_master_top/byte_controller/core_cmd_reg[2] r:/WORK/i2c_master_top/byte_controller/core_cmd_reg[3] r:/WORK/i2c_master_top/byte_controller/core_txd_reg r:/WORK/i2c_master_top/byte_controller/ld_reg r:/WORK/i2c_master_top/byte_controller/shift_reg } 
+verify 
+set_verify {r:/WORK/i2c_master_top/al_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/al_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/busy_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/cSCL_reg[0] r:/WORK/i2c_master_top/byte_controller/bit_controller/cSCL_reg[1] r:/WORK/i2c_master_top/byte_controller/bit_controller/cSDA_reg[0] r:/WORK/i2c_master_top/byte_controller/bit_controller/cSDA_reg[1] r:/WORK/i2c_master_top/byte_controller/bit_controller/clk_en_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/cmd_stop_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[0] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[10] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[11] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[12] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[13] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[14] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[15] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[1] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[2] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[3] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[4] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[5] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[6] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[7] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[8] r:/WORK/i2c_master_top/byte_controller/bit_controller/cnt_reg[9] r:/WORK/i2c_master_top/byte_controller/bit_controller/dSCL_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/dSDA_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/dout_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/dscl_oen_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/fSCL_reg[0] r:/WORK/i2c_master_top/byte_controller/bit_controller/fSCL_reg[1] r:/WORK/i2c_master_top/byte_controller/bit_controller/fSCL_reg[2] r:/WORK/i2c_master_top/byte_controller/bit_controller/fSDA_reg[0] r:/WORK/i2c_master_top/byte_controller/bit_controller/fSDA_reg[1] r:/WORK/i2c_master_top/byte_controller/bit_controller/fSDA_reg[2] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[0] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[1] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[3] r:/WORK/i2c_master_top/byte_controller/bit_controller/slave_wait_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/sta_condition_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/sto_condition_reg r:/WORK/i2c_master_top/byte_controller/dcnt_reg[0] r:/WORK/i2c_master_top/byte_controller/dcnt_reg[1] r:/WORK/i2c_master_top/byte_controller/dcnt_reg[2] r:/WORK/i2c_master_top/byte_controller/sr_reg[0] r:/WORK/i2c_master_top/byte_controller/sr_reg[1] r:/WORK/i2c_master_top/byte_controller/sr_reg[3] r:/WORK/i2c_master_top/byte_controller/sr_reg[4] r:/WORK/i2c_master_top/byte_controller/sr_reg[5] r:/WORK/i2c_master_top/byte_controller/sr_reg[6] r:/WORK/i2c_master_top/byte_controller/sr_reg[7] r:/WORK/i2c_master_top/cr_reg[0] r:/WORK/i2c_master_top/cr_reg[1] r:/WORK/i2c_master_top/cr_reg[2] r:/WORK/i2c_master_top/cr_reg[3] r:/WORK/i2c_master_top/cr_reg[4] r:/WORK/i2c_master_top/cr_reg[5] r:/WORK/i2c_master_top/cr_reg[6] r:/WORK/i2c_master_top/cr_reg[7] r:/WORK/i2c_master_top/ctr_reg[0] r:/WORK/i2c_master_top/ctr_reg[1] r:/WORK/i2c_master_top/ctr_reg[2] r:/WORK/i2c_master_top/ctr_reg[3] r:/WORK/i2c_master_top/ctr_reg[4] r:/WORK/i2c_master_top/ctr_reg[5] r:/WORK/i2c_master_top/ctr_reg[6] r:/WORK/i2c_master_top/ctr_reg[7] r:/WORK/i2c_master_top/irq_flag_reg r:/WORK/i2c_master_top/prer_reg[0] r:/WORK/i2c_master_top/prer_reg[10] r:/WORK/i2c_master_top/prer_reg[11] r:/WORK/i2c_master_top/prer_reg[12] r:/WORK/i2c_master_top/prer_reg[13] r:/WORK/i2c_master_top/prer_reg[14] r:/WORK/i2c_master_top/prer_reg[15] r:/WORK/i2c_master_top/prer_reg[1] r:/WORK/i2c_master_top/prer_reg[2] r:/WORK/i2c_master_top/prer_reg[3] r:/WORK/i2c_master_top/prer_reg[4] r:/WORK/i2c_master_top/prer_reg[5] r:/WORK/i2c_master_top/prer_reg[6] r:/WORK/i2c_master_top/prer_reg[7] r:/WORK/i2c_master_top/prer_reg[8] r:/WORK/i2c_master_top/prer_reg[9] r:/WORK/i2c_master_top/rxack_reg r:/WORK/i2c_master_top/tip_reg r:/WORK/i2c_master_top/txr_reg[0] r:/WORK/i2c_master_top/txr_reg[1] r:/WORK/i2c_master_top/txr_reg[2] r:/WORK/i2c_master_top/txr_reg[3] r:/WORK/i2c_master_top/txr_reg[4] r:/WORK/i2c_master_top/txr_reg[5] r:/WORK/i2c_master_top/txr_reg[6] r:/WORK/i2c_master_top/txr_reg[7] r:/WORK/i2c_master_top/wb_ack_o_reg r:/WORK/i2c_master_top/wb_dat_o_reg[0] r:/WORK/i2c_master_top/wb_dat_o_reg[1] r:/WORK/i2c_master_top/wb_dat_o_reg[2] r:/WORK/i2c_master_top/wb_dat_o_reg[3] r:/WORK/i2c_master_top/wb_dat_o_reg[4] r:/WORK/i2c_master_top/wb_dat_o_reg[5] r:/WORK/i2c_master_top/wb_dat_o_reg[6] r:/WORK/i2c_master_top/wb_dat_o_reg[7] r:/WORK/i2c_master_top/wb_inta_o_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[10] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[11] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[12] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[13] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[2] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[4] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[5] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[6] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[7] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[8] r:/WORK/i2c_master_top/byte_controller/bit_controller/filter_cnt_reg[9] r:/WORK/i2c_master_top/byte_controller/bit_controller/sSCL_reg r:/WORK/i2c_master_top/byte_controller/bit_controller/sSDA_reg r:/WORK/i2c_master_top/byte_controller/sr_reg[2] r:/WORK/i2c_master_top/scl_pad_o r:/WORK/i2c_master_top/scl_padoen_o r:/WORK/i2c_master_top/sda_pad_o r:/WORK/i2c_master_top/sda_padoen_o r:/WORK/i2c_master_top/wb_ack_o r:/WORK/i2c_master_top/wb_dat_o[0] r:/WORK/i2c_master_top/wb_dat_o[1] r:/WORK/i2c_master_top/wb_dat_o[2] r:/WORK/i2c_master_top/wb_dat_o[3] r:/WORK/i2c_master_top/wb_dat_o[4] r:/WORK/i2c_master_top/wb_dat_o[5] r:/WORK/i2c_master_top/wb_dat_o[6] r:/WORK/i2c_master_top/wb_dat_o[7] r:/WORK/i2c_master_top/wb_inta_o } 
+verify 
