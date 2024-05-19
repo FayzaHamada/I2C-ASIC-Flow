@@ -1,0 +1,371 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 10
+        -report_by design
+Design : i2c_master_top
+Version: V-2023.12
+Date   : Fri May 10 16:46:41 2024
+****************************************
+
+  Startpoint: byte_controller/bit_controller/cSCL_reg_0_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cSCL_reg_1_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  byte_controller/bit_controller/cSCL_reg_0_/CLK (DFFARX1)
+                                                   0.00      0.25 r
+  byte_controller/bit_controller/cSCL_reg_0_/QN (DFFARX1)
+                                                   0.14      0.39 r
+  byte_controller/bit_controller/U36/QN (NOR2X0)   0.03      0.42 f
+  byte_controller/bit_controller/cSCL_reg_1_/D (DFFARX1)
+                                                   0.00      0.42 f
+  data arrival time                                          0.42
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  byte_controller/bit_controller/cSCL_reg_1_/CLK (DFFARX1)
+                                                   0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.42
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.15
+
+
+
+  Startpoint: byte_controller/bit_controller/cSDA_reg_0_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cSDA_reg_1_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  byte_controller/bit_controller/cSDA_reg_0_/CLK (DFFARX1)
+                                                   0.00      0.25 r
+  byte_controller/bit_controller/cSDA_reg_0_/QN (DFFARX1)
+                                                   0.14      0.39 r
+  byte_controller/bit_controller/U37/QN (NOR2X0)   0.03      0.42 f
+  byte_controller/bit_controller/cSDA_reg_1_/D (DFFARX1)
+                                                   0.00      0.42 f
+  data arrival time                                          0.42
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  byte_controller/bit_controller/cSDA_reg_1_/CLK (DFFARX1)
+                                                   0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.42
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.15
+
+
+
+  Startpoint: wb_ack_o_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: wb_ack_o_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  wb_ack_o_reg/CLK (DFFX2)                         0.00      0.25 r
+  wb_ack_o_reg/QN (DFFX2)                          0.13      0.38 f
+  U245/Q (AND3X1)                                  0.05      0.43 f
+  wb_ack_o_reg/D (DFFX2)                           0.00      0.43 f
+  data arrival time                                          0.43
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  wb_ack_o_reg/CLK (DFFX2)                         0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.43
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.15
+
+
+
+  Startpoint: byte_controller/bit_controller/dscl_oen_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/slave_wait_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  byte_controller/bit_controller/dscl_oen_reg/CLK (DFFX1)
+                                                   0.00      0.25 r
+  byte_controller/bit_controller/dscl_oen_reg/QN (DFFX1)
+                                                   0.12      0.37 f
+  byte_controller/bit_controller/ctmTdsLR_1_293/Q (OA221X1)
+                                                   0.05      0.43 f
+  byte_controller/bit_controller/slave_wait_reg/D (DFFARX1)
+                                                   0.00      0.43 f
+  data arrival time                                          0.43
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  byte_controller/bit_controller/slave_wait_reg/CLK (DFFARX1)
+                                                   0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.43
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.15
+
+
+
+  Startpoint: cr_reg_0_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: irq_flag_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  cr_reg_0_/CLK (DFFARX1)                          0.00      0.25 r
+  cr_reg_0_/QN (DFFARX1)                           0.12      0.37 f
+  U247/Q (AND3X1)                                  0.06      0.43 f
+  irq_flag_reg/D (DFFARX1)                         0.00      0.43 f
+  data arrival time                                          0.43
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  irq_flag_reg/CLK (DFFARX1)                       0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.43
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.15
+
+
+
+  Startpoint: byte_controller/bit_controller/cmd_stop_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/al_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  byte_controller/bit_controller/cmd_stop_reg/CLK (DFFARX1)
+                                                   0.00      0.25 r
+  byte_controller/bit_controller/cmd_stop_reg/QN (DFFARX1)
+                                                   0.13      0.38 f
+  byte_controller/bit_controller/U132/QN (NAND4X0)
+                                                   0.04      0.42 r
+  byte_controller/bit_controller/U34/QN (NAND2X1)
+                                                   0.02      0.44 f
+  byte_controller/bit_controller/al_reg/D (DFFARX1)
+                                                   0.00      0.44 f
+  data arrival time                                          0.44
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  byte_controller/bit_controller/al_reg/CLK (DFFARX1)
+                                                   0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.44
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.14
+
+
+
+  Startpoint: byte_controller/dcnt_reg_0_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: byte_controller/dcnt_reg_0_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  byte_controller/dcnt_reg_0_/CLK (DFFARX1)        0.00      0.25 r
+  byte_controller/dcnt_reg_0_/QN (DFFARX1)         0.14      0.39 f
+  byte_controller/U63/Q (AO221X1)                  0.07      0.45 f
+  byte_controller/dcnt_reg_0_/D (DFFARX1)          0.00      0.45 f
+  data arrival time                                          0.45
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  byte_controller/dcnt_reg_0_/CLK (DFFARX1)        0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.45
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.12
+
+
+
+  Startpoint: byte_controller/bit_controller/sSDA_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/sto_condition_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  byte_controller/bit_controller/sSDA_reg/CLK (DFFASX1)
+                                                   0.00      0.25 r
+  byte_controller/bit_controller/sSDA_reg/QN (DFFASX1)
+                                                   0.15      0.40 r
+  byte_controller/bit_controller/U140/QN (NOR4X0)
+                                                   0.06      0.46 f
+  byte_controller/bit_controller/sto_condition_reg/D (DFFARX1)
+                                                   0.00      0.46 f
+  data arrival time                                          0.46
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  byte_controller/bit_controller/sto_condition_reg/CLK (DFFARX1)
+                                                   0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.46
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.12
+
+
+
+  Startpoint: byte_controller/dcnt_reg_0_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: byte_controller/dcnt_reg_1_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  byte_controller/dcnt_reg_0_/CLK (DFFARX1)        0.00      0.25 r
+  byte_controller/dcnt_reg_0_/QN (DFFARX1)         0.14      0.39 f
+  byte_controller/U62/Q (AO221X1)                  0.08      0.46 f
+  byte_controller/dcnt_reg_1_/D (DFFARX1)          0.00      0.46 f
+  data arrival time                                          0.46
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  byte_controller/dcnt_reg_1_/CLK (DFFARX1)        0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.03      0.58
+  data required time                                         0.58
+  ------------------------------------------------------------------------
+  data required time                                         0.58
+  data arrival time                                         -0.46
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.12
+
+
+
+  Startpoint: byte_controller/bit_controller/sSCL_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/dSCL_reg (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: wb_clk_i
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+
+  byte_controller/bit_controller/sSCL_reg/CLK (DFFASX1)
+                                                   0.00      0.25 r
+  byte_controller/bit_controller/sSCL_reg/QN (DFFASX1)
+                                                   0.17      0.42 r
+  byte_controller/bit_controller/U18/QN (NAND2X0)
+                                                   0.04      0.46 f
+  byte_controller/bit_controller/dSCL_reg/D (DFFASX1)
+                                                   0.00      0.46 f
+  data arrival time                                          0.46
+
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.25
+  byte_controller/bit_controller/dSCL_reg/CLK (DFFASX1)
+                                                   0.00      0.25 r
+  clock uncertainty                                0.30      0.55
+  library hold time                                0.02      0.57
+  data required time                                         0.57
+  ------------------------------------------------------------------------
+  data required time                                         0.57
+  data arrival time                                         -0.46
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.11
+
+
+1
