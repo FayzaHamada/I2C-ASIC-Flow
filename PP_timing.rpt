@@ -1,0 +1,444 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 10
+        -report_by design
+Design : i2c_master_top
+Version: V-2023.12
+Date   : Fri May 10 15:45:39 2024
+****************************************
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_1_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U93/Q (AO222X1)   0.14      2.27 r
+  byte_controller/bit_controller/cnt_reg_1_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_1_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.63
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_2_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U94/Q (AO222X1)   0.14      2.27 r
+  byte_controller/bit_controller/cnt_reg_2_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_2_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_5_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U97/Q (AO222X1)   0.14      2.27 r
+  byte_controller/bit_controller/cnt_reg_5_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_5_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_12_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U104/Q (AO222X1)
+                                                   0.13      2.27 r
+  byte_controller/bit_controller/cnt_reg_12_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_12_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_13_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U105/Q (AO222X1)
+                                                   0.13      2.27 r
+  byte_controller/bit_controller/cnt_reg_13_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_13_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_7_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U99/Q (AO222X1)   0.13      2.27 r
+  byte_controller/bit_controller/cnt_reg_7_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_7_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_11_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U103/Q (AO222X1)
+                                                   0.13      2.27 r
+  byte_controller/bit_controller/cnt_reg_11_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_11_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_0_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U92/Q (AO222X1)   0.13      2.27 r
+  byte_controller/bit_controller/cnt_reg_0_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_0_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_4_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U96/Q (AO222X1)   0.13      2.27 r
+  byte_controller/bit_controller/cnt_reg_4_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_4_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+
+  Startpoint: wb_rst_i (input port clocked by wb_clk_i)
+  Endpoint: byte_controller/bit_controller/cnt_reg_3_ (rising edge-triggered flip-flop clocked by wb_clk_i)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock wb_clk_i (rise edge)                       0.00      0.00
+  clock network delay (ideal)                      0.25      0.26
+  input external delay                             0.50      0.76 r
+  wb_rst_i (in)                                    0.01      0.76 r
+  U253/ZN (INVX0)                                  0.07      0.83 f
+  U252/ZN (INVX0)                                  0.18      1.01 r
+  byte_controller/U4/ZN (INVX0)                    0.07      1.08 f
+  byte_controller/U3/ZN (INVX0)                    0.19      1.27 r
+  byte_controller/bit_controller/U3/ZN (INVX0)     0.17      1.44 f
+  byte_controller/bit_controller/U21/QN (NAND4X0)
+                                                   0.22      1.66 r
+  byte_controller/bit_controller/U22/QN (NOR2X0)   0.26      1.92 f
+  byte_controller/bit_controller/U12/QN (NOR2X0)   0.21      2.13 r
+  byte_controller/bit_controller/U95/Q (AO222X1)   0.13      2.27 r
+  byte_controller/bit_controller/cnt_reg_3_/D (DFFARX1)
+                                                   0.00      2.27 r
+  data arrival time                                          2.27
+
+  clock wb_clk_i (rise edge)                       5.00      5.00
+  clock network delay (ideal)                      0.25      5.25
+  byte_controller/bit_controller/cnt_reg_3_/CLK (DFFARX1)
+                                                   0.00      5.25 r
+  clock uncertainty                               -0.30      4.95
+  library setup time                              -0.05      4.90
+  data required time                                         4.90
+  ------------------------------------------------------------------------
+  data required time                                         4.90
+  data arrival time                                         -2.27
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.64
+
+
+1

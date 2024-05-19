@@ -1,0 +1,2888 @@
+
+************************
+
+running check_legality
+
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+
+check_legality for block design i2c_master_top ... 
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Total 0.0400 seconds to build cellmap data
+Information: Creating classic rule checker.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+=====> Processed 30 ref cells (0 fillers) from library
+Design has no advanced rules
+Checking legality
+Checking cell legality:
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Sorting rows.
+Checking spacing rule legality.
+
+Checking packing rule legality.
+
+
+****************************************
+  Report : Legality
+****************************************
+
+VIOLATIONS BY CATEGORY:
+   MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+       404          0          0  Two objects overlap.
+         0          0          0  A cell violates a pnet.
+         0          0          0  A cell is illegal at a site.
+       565          0          0  A cell is not aligned with a site.
+         0          0          0  A cell has an illegal orientation.
+         0          0          0  A cell spacing rule is violated.
+         0          0          0  A layer rule is violated.
+         0          0          0  A cell is in the wrong region.
+         0          0          0  Two cells violate cts margins.
+         0          0          0  Two cells violate coloring.
+
+       969          0          0  TOTAL
+
+TOTAL 969 Violations.
+
+VIOLATIONS BY SUBCATEGORY:
+     MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+
+       404          0          0    Two objects overlap.
+         404          0          0    Two cells overlap.
+           0          0          0    Two cells have overlapping keepout margins.
+           0          0          0    A cell overlaps a blockage.
+           0          0          0    A cell keepout margin overlaps a blockage.
+
+         0          0          0    A cell violates a pnet.
+
+         0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates pin-track alignment rules.
+           0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates legal index rule.
+           0          0          0    A cell has the wrong variant for its location.
+
+       565          0          0    A cell is not aligned with a site.
+         565          0          0    A cell is not aligned with the base site.
+           0          0          0    A cell is not aligned with an overlaid site.
+
+         0          0          0    A cell has an illegal orientation.
+
+         0          0          0    A cell spacing rule is violated.
+           0          0          0    A spacing rule is violated in a row.
+           0          0          0    A spacing rule is violated between adjacent rows.
+           0          0          0    A cell violates vertical abutment rule.
+           0          0          0    A cell violates metal spacing rule.
+
+         0          0          0    A layer rule is violated.
+           0          0          0    A layer VTH rule is violated.
+           0          0          0    A layer OD rule is violated.
+           0          0          0    A layer OD max-width rule is violated.
+           0          0          0    A layer ALL_OD corner rule is violated.
+           0          0          0    A layer max-vertical-length rule is violated.
+           0          0          0    A layer TPO rule is violated.
+           0          0          0    Filler cell insertion cannot satisfy layer rules.
+
+         0          0          0    A cell is in the wrong region.
+           0          0          0    A cell is outside its hard bound.
+           0          0          0    A cell is in the wrong voltage area.
+           0          0          0    A cell violates an exclusive movebound.
+
+         0          0          0    Two cells violate cts margins.
+
+         0          0          0    Two cells violate coloring.
+
+****************************************
+  Report : Legality Violations
+****************************************
+
+-----------------------------------------------------------------
+Category:    [movable]    Two objects overlap.
+Subcategory: [movable]    Two cells overlap.
+-----------------------------------------------------------------
+
+Cell U250 and Cell cr_reg_7_ overlap.
+Cell U250 rect: { 31.266 28.566 33.826 31.446 } (um)
+Cell cr_reg_7_ rect: { 30.436 27.604 41.636 30.484 } (um)
+
+Cell byte_controller/U98 and Cell byte_controller/bit_controller/cnt_reg_0_ overlap.
+Cell byte_controller/U98 rect: { 33.691 57.534 36.251 60.414 } (um)
+Cell byte_controller/bit_controller/cnt_reg_0_ rect: { 26.449 56.831 37.649 59.711 } (um)
+
+Cell byte_controller/bit_controller/U121 and Cell byte_controller/bit_controller/cSCL_reg_0_ overlap.
+Cell byte_controller/bit_controller/U121 rect: { 1.251 83.218 3.811 86.097 } (um)
+Cell byte_controller/bit_controller/cSCL_reg_0_ rect: { 0.156 80.621 11.356 83.501 } (um)
+
+Cell byte_controller/bit_controller/U122 and Cell byte_controller/core_cmd_reg_0_ overlap.
+Cell byte_controller/bit_controller/U122 rect: { 1.710 74.554 4.270 77.434 } (um)
+Cell byte_controller/core_cmd_reg_0_ rect: { 0.005 74.701 11.206 77.581 } (um)
+
+Cell byte_controller/bit_controller/U49 and Cell byte_controller/bit_controller/dscl_oen_reg overlap.
+Cell byte_controller/bit_controller/U49 rect: { 52.762 110.582 55.322 113.462 } (um)
+Cell byte_controller/bit_controller/dscl_oen_reg rect: { 53.388 112.575 62.028 115.455 } (um)
+
+Cell byte_controller/U9 and Cell prer_reg_5_ overlap.
+Cell byte_controller/U9 rect: { 24.144 52.456 26.704 55.336 } (um)
+Cell prer_reg_5_ rect: { 26.687 51.018 37.567 53.898 } (um)
+
+Cell U245 and Cell wb_ack_o_reg overlap.
+Cell U245 rect: { 9.002 0.725 11.882 3.605 } (um)
+Cell wb_ack_o_reg rect: { 11.071 2.138 19.711 5.018 } (um)
+
+Cell U245 and Cell byte_controller/dcnt_reg_0_ overlap.
+Cell U245 rect: { 9.002 0.725 11.882 3.605 } (um)
+Cell byte_controller/dcnt_reg_0_ rect: { 0.005 1.946 11.206 4.826 } (um)
+
+Cell U245 and Cell byte_controller/U63 overlap.
+Cell U245 rect: { 9.002 0.725 11.882 3.605 } (um)
+Cell byte_controller/U63 rect: { 5.817 3.573 10.297 6.453 } (um)
+
+Cell U247 and Cell cr_reg_0_ overlap.
+Cell U247 rect: { 70.758 9.930 73.638 12.810 } (um)
+Cell cr_reg_0_ rect: { 66.224 7.534 77.424 10.414 } (um)
+
+Cell byte_controller/bit_controller/U141 and Cell byte_controller/bit_controller/U17 overlap.
+Cell byte_controller/bit_controller/U141 rect: { 35.423 109.582 38.303 112.463 } (um)
+Cell byte_controller/bit_controller/U17 rect: { 33.639 111.457 35.559 114.337 } (um)
+
+Cell byte_controller/bit_controller/U141 and Cell byte_controller/bit_controller/U18 overlap.
+Cell byte_controller/bit_controller/U141 rect: { 35.423 109.582 38.303 112.463 } (um)
+Cell byte_controller/bit_controller/U18 rect: { 34.927 109.242 36.847 112.122 } (um)
+
+Cell byte_controller/bit_controller/U32 and Cell byte_controller/core_txd_reg overlap.
+Cell byte_controller/bit_controller/U32 rect: { 65.319 73.391 68.199 76.271 } (um)
+Cell byte_controller/core_txd_reg rect: { 64.302 71.959 75.502 74.839 } (um)
+
+Cell byte_controller/bit_controller/U134 and Cell byte_controller/bit_controller/U91 overlap.
+Cell byte_controller/bit_controller/U134 rect: { 96.175 104.378 99.695 107.258 } (um)
+Cell byte_controller/bit_controller/U91 rect: { 98.435 105.468 102.595 108.348 } (um)
+
+Cell byte_controller/U65 and Cell cr_reg_5_ overlap.
+Cell byte_controller/U65 rect: { 10.959 11.734 14.479 14.614 } (um)
+Cell cr_reg_5_ rect: { 14.449 11.485 25.649 14.365 } (um)
+
+Cell byte_controller/U65 and Cell byte_controller/dcnt_reg_1_ overlap.
+Cell byte_controller/U65 rect: { 10.959 11.734 14.479 14.614 } (um)
+Cell byte_controller/dcnt_reg_1_ rect: { 0.005 8.901 11.206 11.781 } (um)
+
+Cell byte_controller/U65 and Cell byte_controller/U66 overlap.
+Cell byte_controller/U65 rect: { 10.959 11.734 14.479 14.614 } (um)
+Cell byte_controller/U66 rect: { 13.632 9.037 17.152 11.917 } (um)
+
+Cell byte_controller/U66 and Cell cr_reg_5_ overlap.
+Cell byte_controller/U66 rect: { 13.632 9.037 17.152 11.917 } (um)
+Cell cr_reg_5_ rect: { 14.449 11.485 25.649 14.365 } (um)
+
+Cell byte_controller/U68 and Cell byte_controller/U86 overlap.
+Cell byte_controller/U68 rect: { 14.020 54.219 17.540 57.099 } (um)
+Cell byte_controller/U86 rect: { 16.054 53.737 18.614 56.617 } (um)
+
+Cell byte_controller/U70 and Cell byte_controller/c_state_reg_0_ overlap.
+Cell byte_controller/U70 rect: { 1.567 40.089 5.087 42.969 } (um)
+Cell byte_controller/c_state_reg_0_ rect: { 1.395 41.273 12.595 44.153 } (um)
+
+Cell byte_controller/U73 and Cell byte_controller/core_cmd_reg_1_ overlap.
+Cell byte_controller/U73 rect: { 13.282 71.335 16.802 74.215 } (um)
+Cell byte_controller/core_cmd_reg_1_ rect: { 4.324 69.452 15.524 72.332 } (um)
+
+Cell byte_controller/U102 and Cell byte_controller/U90 overlap.
+Cell byte_controller/U102 rect: { 24.009 44.232 27.529 47.112 } (um)
+Cell byte_controller/U90 rect: { 26.180 44.731 30.340 47.611 } (um)
+
+Cell byte_controller/U102 and Cell byte_controller/U24 overlap.
+Cell byte_controller/U102 rect: { 24.009 44.232 27.529 47.112 } (um)
+Cell byte_controller/U24 rect: { 23.459 41.630 25.379 44.510 } (um)
+
+Cell byte_controller/U102 and Cell byte_controller/U35 overlap.
+Cell byte_controller/U102 rect: { 24.009 44.232 27.529 47.112 } (um)
+Cell byte_controller/U35 rect: { 23.793 41.568 25.713 44.448 } (um)
+
+Cell byte_controller/bit_controller/U82 and Cell byte_controller/bit_controller/c_state_reg_13_ overlap.
+Cell byte_controller/bit_controller/U82 rect: { 91.248 83.092 94.768 85.972 } (um)
+Cell byte_controller/bit_controller/c_state_reg_13_ rect: { 91.903 85.928 103.103 88.808 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U12 and Cell byte_controller/bit_controller/sub_260/U32 overlap.
+Cell byte_controller/bit_controller/sub_260/U12 rect: { 115.715 48.500 119.235 51.380 } (um)
+Cell byte_controller/bit_controller/sub_260/U32 rect: { 114.994 50.717 116.914 53.597 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U13 and Cell byte_controller/bit_controller/sub_260/U36 overlap.
+Cell byte_controller/bit_controller/sub_260/U13 rect: { 115.838 41.295 119.358 44.175 } (um)
+Cell byte_controller/bit_controller/sub_260/U36 rect: { 117.439 40.434 119.359 43.315 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U15 and Cell byte_controller/bit_controller/sub_260/U8 overlap.
+Cell byte_controller/bit_controller/sub_260/U15 rect: { 110.076 55.793 113.596 58.673 } (um)
+Cell byte_controller/bit_controller/sub_260/U8 rect: { 113.218 53.942 115.138 56.822 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U15 and Cell byte_controller/bit_controller/sub_260/U34 overlap.
+Cell byte_controller/bit_controller/sub_260/U15 rect: { 110.076 55.793 113.596 58.673 } (um)
+Cell byte_controller/bit_controller/sub_260/U34 rect: { 110.013 55.961 111.933 58.840 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U16 and Cell byte_controller/bit_controller/sub_260/U33 overlap.
+Cell byte_controller/bit_controller/sub_260/U16 rect: { 87.718 50.696 91.238 53.576 } (um)
+Cell byte_controller/bit_controller/sub_260/U33 rect: { 89.033 48.593 90.953 51.473 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U16 and Cell byte_controller/bit_controller/sub_260/U4 overlap.
+Cell byte_controller/bit_controller/sub_260/U16 rect: { 87.718 50.696 91.238 53.576 } (um)
+Cell byte_controller/bit_controller/sub_260/U4 rect: { 90.722 48.468 92.642 51.348 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U18 and Cell byte_controller/bit_controller/sub_260/U30 overlap.
+Cell byte_controller/bit_controller/sub_260/U18 rect: { 95.076 53.793 98.596 56.673 } (um)
+Cell byte_controller/bit_controller/sub_260/U30 rect: { 95.013 56.210 96.933 59.090 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U18 and Cell byte_controller/bit_controller/sub_260/U28 overlap.
+Cell byte_controller/bit_controller/sub_260/U18 rect: { 95.076 53.793 98.596 56.673 } (um)
+Cell byte_controller/bit_controller/sub_260/U28 rect: { 96.908 53.941 98.828 56.821 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U18 and Cell byte_controller/bit_controller/sub_260/U29 overlap.
+Cell byte_controller/bit_controller/sub_260/U18 rect: { 95.076 53.793 98.596 56.673 } (um)
+Cell byte_controller/bit_controller/sub_260/U29 rect: { 94.191 52.346 96.111 55.225 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U24 and Cell byte_controller/bit_controller/sub_260/U37 overlap.
+Cell byte_controller/bit_controller/sub_260/U24 rect: { 115.633 71.519 119.153 74.399 } (um)
+Cell byte_controller/bit_controller/sub_260/U37 rect: { 114.408 74.327 116.328 77.207 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U26 and Cell byte_controller/bit_controller/sub_260/U37 overlap.
+Cell byte_controller/bit_controller/sub_260/U26 rect: { 114.468 76.195 117.988 79.075 } (um)
+Cell byte_controller/bit_controller/sub_260/U37 rect: { 114.408 74.327 116.328 77.207 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U14 and Cell byte_controller/bit_controller/sub_228/U32 overlap.
+Cell byte_controller/bit_controller/sub_228/U14 rect: { 52.260 98.515 55.779 101.395 } (um)
+Cell byte_controller/bit_controller/sub_228/U32 rect: { 52.486 99.996 56.006 102.876 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U17 and Cell byte_controller/bit_controller/sub_228/U5 overlap.
+Cell byte_controller/bit_controller/sub_228/U17 rect: { 22.926 84.232 26.446 87.112 } (um)
+Cell byte_controller/bit_controller/sub_228/U5 rect: { 23.726 86.210 25.646 89.090 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U18 and Cell byte_controller/bit_controller/sub_228/U19 overlap.
+Cell byte_controller/bit_controller/sub_228/U18 rect: { 24.283 69.505 27.803 72.385 } (um)
+Cell byte_controller/bit_controller/sub_228/U19 rect: { 21.617 67.760 25.137 70.640 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U21 and Cell byte_controller/bit_controller/sub_228/U34 overlap.
+Cell byte_controller/bit_controller/sub_228/U21 rect: { 44.219 67.257 47.739 70.138 } (um)
+Cell byte_controller/bit_controller/sub_228/U34 rect: { 43.413 68.187 45.333 71.067 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U26 and Cell byte_controller/bit_controller/sub_228/U3 overlap.
+Cell byte_controller/bit_controller/sub_228/U26 rect: { 42.187 78.912 45.707 81.792 } (um)
+Cell byte_controller/bit_controller/sub_228/U3 rect: { 44.390 76.119 46.310 78.999 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U28 and Cell byte_controller/bit_controller/sub_228/U42 overlap.
+Cell byte_controller/bit_controller/sub_228/U28 rect: { 35.702 87.848 39.222 90.728 } (um)
+Cell byte_controller/bit_controller/sub_228/U42 rect: { 35.401 90.511 37.321 93.391 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U30 and Cell byte_controller/bit_controller/sub_228/U9 overlap.
+Cell byte_controller/bit_controller/sub_228/U30 rect: { 43.862 102.027 47.382 104.907 } (um)
+Cell byte_controller/bit_controller/sub_228/U9 rect: { 45.572 104.115 47.492 106.995 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U30 and Cell byte_controller/bit_controller/sub_228/U7 overlap.
+Cell byte_controller/bit_controller/sub_228/U30 rect: { 43.862 102.027 47.382 104.907 } (um)
+Cell byte_controller/bit_controller/sub_228/U7 rect: { 45.150 100.772 47.070 103.652 } (um)
+
+Cell U166 and Cell U254 overlap.
+Cell U166 rect: { 38.083 48.963 42.563 51.843 } (um)
+Cell U254 rect: { 38.314 51.244 40.234 54.124 } (um)
+
+Cell U166 and Cell U202 overlap.
+Cell U166 rect: { 38.083 48.963 42.563 51.843 } (um)
+Cell U202 rect: { 41.330 46.279 45.810 49.159 } (um)
+
+Cell U168 and Cell prer_reg_3_ overlap.
+Cell U168 rect: { 51.282 49.938 55.762 52.818 } (um)
+Cell prer_reg_3_ rect: { 54.339 47.545 65.219 50.425 } (um)
+
+Cell U168 and Cell U204 overlap.
+Cell U168 rect: { 51.282 49.938 55.762 52.818 } (um)
+Cell U204 rect: { 47.898 49.266 52.378 52.146 } (um)
+
+Cell U170 and Cell U209 overlap.
+Cell U170 rect: { 62.432 55.734 66.912 58.614 } (um)
+Cell U209 rect: { 58.063 57.565 62.543 60.445 } (um)
+
+Cell U171 and Cell U254 overlap.
+Cell U171 rect: { 40.203 53.268 44.683 56.148 } (um)
+Cell U254 rect: { 38.314 51.244 40.234 54.124 } (um)
+
+Cell U201 and Cell U209 overlap.
+Cell U201 rect: { 57.408 54.808 61.889 57.688 } (um)
+Cell U209 rect: { 58.063 57.565 62.543 60.445 } (um)
+
+Cell U203 and Cell U204 overlap.
+Cell U203 rect: { 44.487 49.337 48.967 52.217 } (um)
+Cell U204 rect: { 47.898 49.266 52.378 52.146 } (um)
+
+Cell U206 and Cell U215 overlap.
+Cell U206 rect: { 68.578 43.788 73.058 46.669 } (um)
+Cell U215 rect: { 71.421 42.324 75.901 45.204 } (um)
+
+Cell U206 and Cell prer_reg_12_ overlap.
+Cell U206 rect: { 68.578 43.788 73.058 46.669 } (um)
+Cell prer_reg_12_ rect: { 58.724 41.998 69.604 44.878 } (um)
+
+Cell U207 and Cell prer_reg_11_ overlap.
+Cell U207 rect: { 67.140 51.497 71.620 54.377 } (um)
+Cell prer_reg_11_ rect: { 64.538 48.804 75.418 51.684 } (um)
+
+Cell U208 and Cell prer_reg_14_ overlap.
+Cell U208 rect: { 43.494 42.551 47.974 45.431 } (um)
+Cell prer_reg_14_ rect: { 47.254 43.412 58.134 46.292 } (um)
+
+Cell byte_controller/U62 and Cell byte_controller/U65 overlap.
+Cell byte_controller/U62 rect: { 9.394 9.501 13.874 12.381 } (um)
+Cell byte_controller/U65 rect: { 10.959 11.734 14.479 14.614 } (um)
+
+Cell byte_controller/U62 and Cell byte_controller/dcnt_reg_1_ overlap.
+Cell byte_controller/U62 rect: { 9.394 9.501 13.874 12.381 } (um)
+Cell byte_controller/dcnt_reg_1_ rect: { 0.005 8.901 11.206 11.781 } (um)
+
+Cell byte_controller/U62 and Cell byte_controller/U66 overlap.
+Cell byte_controller/U62 rect: { 9.394 9.501 13.874 12.381 } (um)
+Cell byte_controller/U66 rect: { 13.632 9.037 17.152 11.917 } (um)
+
+Cell byte_controller/U63 and Cell byte_controller/dcnt_reg_0_ overlap.
+Cell byte_controller/U63 rect: { 5.817 3.573 10.297 6.453 } (um)
+Cell byte_controller/dcnt_reg_0_ rect: { 0.005 1.946 11.206 4.826 } (um)
+
+Cell byte_controller/U64 and Cell cr_reg_6_ overlap.
+Cell byte_controller/U64 rect: { 10.046 17.363 14.526 20.243 } (um)
+Cell cr_reg_6_ rect: { 11.890 18.580 23.090 21.460 } (um)
+
+Cell byte_controller/U64 and Cell byte_controller/dcnt_reg_2_ overlap.
+Cell byte_controller/U64 rect: { 10.046 17.363 14.526 20.243 } (um)
+Cell byte_controller/dcnt_reg_2_ rect: { 0.005 16.744 11.206 19.625 } (um)
+
+Cell byte_controller/bit_controller/U59 and Cell byte_controller/bit_controller/U62 overlap.
+Cell byte_controller/bit_controller/U59 rect: { 12.003 98.012 16.483 100.892 } (um)
+Cell byte_controller/bit_controller/U62 rect: { 13.088 98.054 17.568 100.934 } (um)
+
+Cell byte_controller/bit_controller/U60 and Cell byte_controller/bit_controller/U61 overlap.
+Cell byte_controller/bit_controller/U60 rect: { 10.573 106.225 15.053 109.105 } (um)
+Cell byte_controller/bit_controller/U61 rect: { 11.806 108.683 16.286 111.563 } (um)
+
+Cell byte_controller/bit_controller/U60 and Cell byte_controller/bit_controller/fSCL_reg_2_ overlap.
+Cell byte_controller/bit_controller/U60 rect: { 10.573 106.225 15.053 109.105 } (um)
+Cell byte_controller/bit_controller/fSCL_reg_2_ rect: { 0.005 105.638 10.885 108.518 } (um)
+
+Cell byte_controller/bit_controller/U142 and Cell byte_controller/bit_controller/U144 overlap.
+Cell byte_controller/bit_controller/U142 rect: { 18.412 105.644 22.892 108.524 } (um)
+Cell byte_controller/bit_controller/U144 rect: { 17.075 107.261 21.555 110.141 } (um)
+
+Cell byte_controller/bit_controller/U144 and Cell byte_controller/bit_controller/sSCL_reg overlap.
+Cell byte_controller/bit_controller/U144 rect: { 17.075 107.261 21.555 110.141 } (um)
+Cell byte_controller/bit_controller/sSCL_reg rect: { 20.867 109.805 31.747 112.685 } (um)
+
+Cell byte_controller/U56 and Cell cr_reg_1_ overlap.
+Cell byte_controller/U56 rect: { 93.653 11.901 98.773 14.781 } (um)
+Cell cr_reg_1_ rect: { 97.213 9.561 108.413 12.441 } (um)
+
+Cell byte_controller/U56 and Cell byte_controller/U57 overlap.
+Cell byte_controller/U56 rect: { 93.653 11.901 98.773 14.781 } (um)
+Cell byte_controller/U57 rect: { 91.184 9.539 96.304 12.419 } (um)
+
+Cell byte_controller/U59 and Cell byte_controller/U60 overlap.
+Cell byte_controller/U59 rect: { 82.619 22.128 87.739 25.008 } (um)
+Cell byte_controller/U60 rect: { 80.829 24.433 85.949 27.313 } (um)
+
+Cell byte_controller/bit_controller/U92 and Cell byte_controller/bit_controller/sub_228/U27 overlap.
+Cell byte_controller/bit_controller/U92 rect: { 39.009 56.980 44.129 59.860 } (um)
+Cell byte_controller/bit_controller/sub_228/U27 rect: { 39.662 56.165 41.582 59.045 } (um)
+
+Cell byte_controller/bit_controller/U93 and Cell byte_controller/bit_controller/U94 overlap.
+Cell byte_controller/bit_controller/U93 rect: { 45.191 62.720 50.311 65.600 } (um)
+Cell byte_controller/bit_controller/U94 rect: { 47.648 65.318 52.769 68.198 } (um)
+
+Cell byte_controller/bit_controller/U94 and Cell byte_controller/bit_controller/sub_228/U21 overlap.
+Cell byte_controller/bit_controller/U94 rect: { 47.648 65.318 52.769 68.198 } (um)
+Cell byte_controller/bit_controller/sub_228/U21 rect: { 44.219 67.257 47.739 70.138 } (um)
+
+Cell byte_controller/bit_controller/U95 and Cell byte_controller/bit_controller/sub_228/U2 overlap.
+Cell byte_controller/bit_controller/U95 rect: { 37.336 63.368 42.456 66.248 } (um)
+Cell byte_controller/bit_controller/sub_228/U2 rect: { 42.155 66.166 44.075 69.046 } (um)
+
+Cell byte_controller/bit_controller/U95 and Cell byte_controller/bit_controller/sub_228/U29 overlap.
+Cell byte_controller/bit_controller/U95 rect: { 37.336 63.368 42.456 66.248 } (um)
+Cell byte_controller/bit_controller/sub_228/U29 rect: { 39.394 63.906 41.314 66.786 } (um)
+
+Cell byte_controller/bit_controller/U96 and Cell byte_controller/bit_controller/sub_228/U43 overlap.
+Cell byte_controller/bit_controller/U96 rect: { 31.439 73.957 36.559 76.837 } (um)
+Cell byte_controller/bit_controller/sub_228/U43 rect: { 36.237 76.617 38.157 79.497 } (um)
+
+Cell byte_controller/bit_controller/U96 and Cell byte_controller/bit_controller/U97 overlap.
+Cell byte_controller/bit_controller/U96 rect: { 31.439 73.957 36.559 76.837 } (um)
+Cell byte_controller/bit_controller/U97 rect: { 28.079 73.754 33.199 76.634 } (um)
+
+Cell byte_controller/bit_controller/U97 and Cell byte_controller/bit_controller/cnt_reg_4_ overlap.
+Cell byte_controller/bit_controller/U97 rect: { 28.079 73.754 33.199 76.634 } (um)
+Cell byte_controller/bit_controller/cnt_reg_4_ rect: { 17.290 74.615 28.490 77.495 } (um)
+
+Cell byte_controller/bit_controller/U98 and Cell byte_controller/bit_controller/cnt_reg_13_ overlap.
+Cell byte_controller/bit_controller/U98 rect: { 25.351 81.799 30.471 84.678 } (um)
+Cell byte_controller/bit_controller/cnt_reg_13_ rect: { 29.157 79.722 40.357 82.602 } (um)
+
+Cell byte_controller/bit_controller/U98 and Cell byte_controller/bit_controller/sub_228/U17 overlap.
+Cell byte_controller/bit_controller/U98 rect: { 25.351 81.799 30.471 84.678 } (um)
+Cell byte_controller/bit_controller/sub_228/U17 rect: { 22.926 84.232 26.446 87.112 } (um)
+
+Cell byte_controller/bit_controller/U100 and Cell byte_controller/bit_controller/U124 overlap.
+Cell byte_controller/bit_controller/U100 rect: { 41.606 86.517 46.726 89.397 } (um)
+Cell byte_controller/bit_controller/U124 rect: { 43.779 85.597 47.298 88.477 } (um)
+
+Cell byte_controller/bit_controller/U101 and Cell byte_controller/bit_controller/clk_en_reg overlap.
+Cell byte_controller/bit_controller/U101 rect: { 56.891 95.669 62.011 98.549 } (um)
+Cell byte_controller/bit_controller/clk_en_reg rect: { 59.622 97.156 70.502 100.036 } (um)
+
+Cell byte_controller/bit_controller/U101 and Cell byte_controller/bit_controller/U102 overlap.
+Cell byte_controller/bit_controller/U101 rect: { 56.891 95.669 62.011 98.549 } (um)
+Cell byte_controller/bit_controller/U102 rect: { 52.175 94.486 57.295 97.366 } (um)
+
+Cell byte_controller/bit_controller/U102 and Cell byte_controller/bit_controller/U22 overlap.
+Cell byte_controller/bit_controller/U102 rect: { 52.175 94.486 57.295 97.366 } (um)
+Cell byte_controller/bit_controller/U22 rect: { 50.734 94.640 52.654 97.520 } (um)
+
+Cell byte_controller/bit_controller/U103 and Cell byte_controller/bit_controller/U113 overlap.
+Cell byte_controller/bit_controller/U103 rect: { 43.728 95.614 48.848 98.494 } (um)
+Cell byte_controller/bit_controller/U113 rect: { 39.822 97.427 43.981 100.307 } (um)
+
+Cell byte_controller/bit_controller/U105 and Cell byte_controller/bit_controller/U128 overlap.
+Cell byte_controller/bit_controller/U105 rect: { 38.602 74.234 43.722 77.114 } (um)
+Cell byte_controller/bit_controller/U128 rect: { 41.313 71.888 44.833 74.768 } (um)
+
+Cell byte_controller/bit_controller/U105 and Cell byte_controller/bit_controller/sub_228/U39 overlap.
+Cell byte_controller/bit_controller/U105 rect: { 38.602 74.234 43.722 77.114 } (um)
+Cell byte_controller/bit_controller/sub_228/U39 rect: { 37.087 72.099 39.007 74.978 } (um)
+
+Cell byte_controller/bit_controller/U106 and Cell byte_controller/bit_controller/sub_228/U23 overlap.
+Cell byte_controller/bit_controller/U106 rect: { 45.373 72.719 50.493 75.599 } (um)
+Cell byte_controller/bit_controller/sub_228/U23 rect: { 49.100 71.115 53.900 73.995 } (um)
+
+Cell byte_controller/bit_controller/U107 and Cell byte_controller/bit_controller/U94 overlap.
+Cell byte_controller/bit_controller/U107 rect: { 52.482 66.392 57.602 69.272 } (um)
+Cell byte_controller/bit_controller/U94 rect: { 47.648 65.318 52.769 68.198 } (um)
+
+Cell U172 and Cell U266 overlap.
+Cell U172 rect: { 50.648 23.348 54.808 26.228 } (um)
+Cell U266 rect: { 50.803 26.166 52.723 29.046 } (um)
+
+Cell U172 and Cell U183 overlap.
+Cell U172 rect: { 50.648 23.348 54.808 26.228 } (um)
+Cell U183 rect: { 53.083 24.656 57.243 27.536 } (um)
+
+Cell U173 and Cell U174 overlap.
+Cell U173 rect: { 26.909 14.334 31.069 17.214 } (um)
+Cell U174 rect: { 25.964 17.158 30.124 20.038 } (um)
+
+Cell U174 and Cell U175 overlap.
+Cell U174 rect: { 25.964 17.158 30.124 20.038 } (um)
+Cell U175 rect: { 23.539 17.914 27.699 20.794 } (um)
+
+Cell U176 and Cell byte_controller/U7 overlap.
+Cell U176 rect: { 32.998 21.450 37.158 24.330 } (um)
+Cell byte_controller/U7 rect: { 37.127 22.392 39.047 25.273 } (um)
+
+Cell U176 and Cell U192 overlap.
+Cell U176 rect: { 32.998 21.450 37.158 24.330 } (um)
+Cell U192 rect: { 36.246 19.831 40.407 22.710 } (um)
+
+Cell U176 and Cell txr_reg_7_ overlap.
+Cell U176 rect: { 32.998 21.450 37.158 24.330 } (um)
+Cell txr_reg_7_ rect: { 22.098 23.001 33.298 25.881 } (um)
+
+Cell U176 and Cell U259 overlap.
+Cell U176 rect: { 32.998 21.450 37.158 24.330 } (um)
+Cell U259 rect: { 31.515 18.811 33.435 21.691 } (um)
+
+Cell U179 and Cell U231 overlap.
+Cell U179 rect: { 84.612 14.447 88.772 17.327 } (um)
+Cell U231 rect: { 87.069 11.719 92.508 14.599 } (um)
+
+Cell U179 and Cell U225 overlap.
+Cell U179 rect: { 84.612 14.447 88.772 17.327 } (um)
+Cell U225 rect: { 79.546 16.544 84.986 19.424 } (um)
+
+Cell U180 and Cell U231 overlap.
+Cell U180 rect: { 84.165 9.574 88.325 12.454 } (um)
+Cell U231 rect: { 87.069 11.719 92.508 14.599 } (um)
+
+Cell U181 and Cell cr_reg_0_ overlap.
+Cell U181 rect: { 63.039 9.700 67.199 12.580 } (um)
+Cell cr_reg_0_ rect: { 66.224 7.534 77.424 10.414 } (um)
+
+Cell U181 and Cell U261 overlap.
+Cell U181 rect: { 63.039 9.700 67.199 12.580 } (um)
+Cell U261 rect: { 61.318 11.484 63.238 14.364 } (um)
+
+Cell U181 and Cell U189 overlap.
+Cell U181 rect: { 63.039 9.700 67.199 12.580 } (um)
+Cell U189 rect: { 60.294 8.111 64.454 10.991 } (um)
+
+Cell U184 and Cell ctr_reg_6_ overlap.
+Cell U184 rect: { 52.792 2.243 56.952 5.123 } (um)
+Cell ctr_reg_6_ rect: { 54.468 2.278 65.668 5.158 } (um)
+
+Cell U184 and Cell ctr_reg_5_ overlap.
+Cell U184 rect: { 52.792 2.243 56.952 5.123 } (um)
+Cell ctr_reg_5_ rect: { 43.430 1.931 54.630 4.811 } (um)
+
+Cell U185 and Cell U199 overlap.
+Cell U185 rect: { 45.816 6.774 49.976 9.653 } (um)
+Cell U199 rect: { 45.021 8.911 49.181 11.791 } (um)
+
+Cell U188 and Cell U264 overlap.
+Cell U188 rect: { 59.371 15.887 63.531 18.767 } (um)
+Cell U264 rect: { 60.935 18.476 64.135 21.356 } (um)
+
+Cell U188 and Cell U248 overlap.
+Cell U188 rect: { 59.371 15.887 63.531 18.767 } (um)
+Cell U248 rect: { 62.236 15.255 65.436 18.135 } (um)
+
+Cell U189 and Cell ctr_reg_0_ overlap.
+Cell U189 rect: { 60.294 8.111 64.454 10.991 } (um)
+Cell ctr_reg_0_ rect: { 50.019 9.127 61.219 12.007 } (um)
+
+Cell U190 and Cell ctr_reg_0_ overlap.
+Cell U190 rect: { 52.613 10.888 56.773 13.768 } (um)
+Cell ctr_reg_0_ rect: { 50.019 9.127 61.219 12.007 } (um)
+
+Cell U192 and Cell byte_controller/U7 overlap.
+Cell U192 rect: { 36.246 19.831 40.407 22.710 } (um)
+Cell byte_controller/U7 rect: { 37.127 22.392 39.047 25.273 } (um)
+
+Cell U193 and Cell U195 overlap.
+Cell U193 rect: { 28.887 10.708 33.047 13.588 } (um)
+Cell U195 rect: { 33.030 13.053 37.190 15.934 } (um)
+
+Cell U193 and Cell cr_reg_4_ overlap.
+Cell U193 rect: { 28.887 10.708 33.047 13.588 } (um)
+Cell cr_reg_4_ rect: { 19.909 8.753 31.109 11.633 } (um)
+
+Cell U194 and Cell U195 overlap.
+Cell U194 rect: { 35.421 14.524 39.581 17.404 } (um)
+Cell U195 rect: { 33.030 13.053 37.190 15.934 } (um)
+
+Cell U197 and Cell U198 overlap.
+Cell U197 rect: { 78.788 10.882 82.948 13.761 } (um)
+Cell U198 rect: { 76.542 10.639 80.702 13.519 } (um)
+
+Cell byte_controller/U61 and Cell byte_controller/U75 overlap.
+Cell byte_controller/U61 rect: { 12.580 58.067 16.740 60.947 } (um)
+Cell byte_controller/U75 rect: { 12.628 60.301 16.788 63.181 } (um)
+
+Cell byte_controller/bit_controller/U67 and Cell byte_controller/bit_controller/U73 overlap.
+Cell byte_controller/bit_controller/U67 rect: { 79.732 110.494 83.892 113.374 } (um)
+Cell byte_controller/bit_controller/U73 rect: { 83.778 111.130 87.938 114.010 } (um)
+
+Cell byte_controller/bit_controller/U67 and Cell byte_controller/bit_controller/U68 overlap.
+Cell byte_controller/bit_controller/U67 rect: { 79.732 110.494 83.892 113.374 } (um)
+Cell byte_controller/bit_controller/U68 rect: { 76.791 108.242 80.951 111.122 } (um)
+
+Cell byte_controller/bit_controller/U76 and Cell byte_controller/bit_controller/c_state_reg_3_ overlap.
+Cell byte_controller/bit_controller/U76 rect: { 104.418 111.495 108.578 114.374 } (um)
+Cell byte_controller/bit_controller/c_state_reg_3_ rect: { 108.154 114.307 119.354 117.187 } (um)
+
+Cell byte_controller/bit_controller/U76 and Cell byte_controller/bit_controller/c_state_reg_15_ overlap.
+Cell byte_controller/bit_controller/U76 rect: { 104.418 111.495 108.578 114.374 } (um)
+Cell byte_controller/bit_controller/c_state_reg_15_ rect: { 96.111 114.257 107.311 117.137 } (um)
+
+Cell byte_controller/bit_controller/U76 and Cell byte_controller/bit_controller/c_state_reg_11_ overlap.
+Cell byte_controller/bit_controller/U76 rect: { 104.418 111.495 108.578 114.374 } (um)
+Cell byte_controller/bit_controller/c_state_reg_11_ rect: { 108.154 109.432 119.354 112.312 } (um)
+
+Cell byte_controller/bit_controller/U77 and Cell byte_controller/bit_controller/U84 overlap.
+Cell byte_controller/bit_controller/U77 rect: { 103.020 96.283 107.180 99.163 } (um)
+Cell byte_controller/bit_controller/U84 rect: { 103.757 94.882 107.917 97.762 } (um)
+
+Cell byte_controller/bit_controller/U78 and Cell byte_controller/bit_controller/U87 overlap.
+Cell byte_controller/bit_controller/U78 rect: { 84.324 84.927 88.484 87.807 } (um)
+Cell byte_controller/bit_controller/U87 rect: { 86.314 83.066 89.834 85.946 } (um)
+
+Cell byte_controller/bit_controller/U79 and Cell byte_controller/bit_controller/c_state_reg_12_ overlap.
+Cell byte_controller/bit_controller/U79 rect: { 104.318 86.983 108.478 89.863 } (um)
+Cell byte_controller/bit_controller/c_state_reg_12_ rect: { 108.154 89.263 119.354 92.143 } (um)
+
+Cell byte_controller/bit_controller/U79 and Cell byte_controller/bit_controller/c_state_reg_6_ overlap.
+Cell byte_controller/bit_controller/U79 rect: { 104.318 86.983 108.478 89.863 } (um)
+Cell byte_controller/bit_controller/c_state_reg_6_ rect: { 108.154 84.335 119.354 87.215 } (um)
+
+Cell byte_controller/bit_controller/U80 and Cell byte_controller/bit_controller/U81 overlap.
+Cell byte_controller/bit_controller/U80 rect: { 94.726 101.024 98.886 103.904 } (um)
+Cell byte_controller/bit_controller/U81 rect: { 90.737 100.618 94.897 103.498 } (um)
+
+Cell byte_controller/bit_controller/U90 and Cell byte_controller/bit_controller/c_state_reg_14_ overlap.
+Cell byte_controller/bit_controller/U90 rect: { 94.209 92.304 98.369 95.184 } (um)
+Cell byte_controller/bit_controller/c_state_reg_14_ rect: { 97.100 90.691 108.300 93.571 } (um)
+
+Cell byte_controller/bit_controller/U91 and Cell byte_controller/bit_controller/c_state_reg_1_ overlap.
+Cell byte_controller/bit_controller/U91 rect: { 98.435 105.468 102.595 108.348 } (um)
+Cell byte_controller/bit_controller/c_state_reg_1_ rect: { 102.568 104.710 113.768 107.590 } (um)
+
+Cell byte_controller/bit_controller/U113 and Cell byte_controller/bit_controller/cnt_reg_11_ overlap.
+Cell byte_controller/bit_controller/U113 rect: { 39.822 97.427 43.981 100.307 } (um)
+Cell byte_controller/bit_controller/cnt_reg_11_ rect: { 30.370 99.688 41.570 102.567 } (um)
+
+Cell byte_controller/bit_controller/U115 and Cell byte_controller/bit_controller/U118 overlap.
+Cell byte_controller/bit_controller/U115 rect: { 81.385 58.740 85.545 61.620 } (um)
+Cell byte_controller/bit_controller/U118 rect: { 85.055 59.655 89.215 62.535 } (um)
+
+Cell byte_controller/bit_controller/U116 and Cell byte_controller/bit_controller/U151 overlap.
+Cell byte_controller/bit_controller/U116 rect: { 86.509 41.328 90.669 44.208 } (um)
+Cell byte_controller/bit_controller/U151 rect: { 88.780 41.957 92.940 44.837 } (um)
+
+Cell byte_controller/bit_controller/U117 and Cell prer_reg_9_ overlap.
+Cell byte_controller/bit_controller/U117 rect: { 85.544 52.041 89.704 54.921 } (um)
+Cell prer_reg_9_ rect: { 74.858 49.868 85.738 52.748 } (um)
+
+Cell byte_controller/bit_controller/U117 and Cell byte_controller/bit_controller/sub_260/U16 overlap.
+Cell byte_controller/bit_controller/U117 rect: { 85.544 52.041 89.704 54.921 } (um)
+Cell byte_controller/bit_controller/sub_260/U16 rect: { 87.718 50.696 91.238 53.576 } (um)
+
+Cell byte_controller/bit_controller/U118 and Cell byte_controller/bit_controller/U152 overlap.
+Cell byte_controller/bit_controller/U118 rect: { 85.055 59.655 89.215 62.535 } (um)
+Cell byte_controller/bit_controller/U152 rect: { 88.526 60.116 92.686 62.996 } (um)
+
+Cell byte_controller/bit_controller/U120 and Cell byte_controller/bit_controller/U146 overlap.
+Cell byte_controller/bit_controller/U120 rect: { 75.774 61.287 79.934 64.167 } (um)
+Cell byte_controller/bit_controller/U146 rect: { 76.048 59.282 80.208 62.162 } (um)
+
+Cell byte_controller/bit_controller/U147 and Cell byte_controller/bit_controller/sub_260/U30 overlap.
+Cell byte_controller/bit_controller/U147 rect: { 91.030 56.673 95.190 59.553 } (um)
+Cell byte_controller/bit_controller/sub_260/U30 rect: { 95.013 56.210 96.933 59.090 } (um)
+
+Cell byte_controller/bit_controller/U148 and Cell byte_controller/bit_controller/U46 overlap.
+Cell byte_controller/bit_controller/U148 rect: { 75.333 74.046 79.493 76.926 } (um)
+Cell byte_controller/bit_controller/U46 rect: { 74.926 75.673 76.846 78.553 } (um)
+
+Cell byte_controller/bit_controller/U148 and Cell byte_controller/bit_controller/U20 overlap.
+Cell byte_controller/bit_controller/U148 rect: { 75.333 74.046 79.493 76.926 } (um)
+Cell byte_controller/bit_controller/U20 rect: { 77.363 76.770 79.283 79.650 } (um)
+
+Cell byte_controller/bit_controller/U148 and Cell byte_controller/core_txd_reg overlap.
+Cell byte_controller/bit_controller/U148 rect: { 75.333 74.046 79.493 76.926 } (um)
+Cell byte_controller/core_txd_reg rect: { 64.302 71.959 75.502 74.839 } (um)
+
+Cell byte_controller/bit_controller/U150 and Cell byte_controller/bit_controller/sub_260/U33 overlap.
+Cell byte_controller/bit_controller/U150 rect: { 89.710 46.519 93.870 49.399 } (um)
+Cell byte_controller/bit_controller/sub_260/U33 rect: { 89.033 48.593 90.953 51.473 } (um)
+
+Cell byte_controller/bit_controller/U150 and Cell byte_controller/bit_controller/sub_260/U4 overlap.
+Cell byte_controller/bit_controller/U150 rect: { 89.710 46.519 93.870 49.399 } (um)
+Cell byte_controller/bit_controller/sub_260/U4 rect: { 90.722 48.468 92.642 51.348 } (um)
+
+Cell byte_controller/bit_controller/U151 and Cell byte_controller/sr_reg_7_ overlap.
+Cell byte_controller/bit_controller/U151 rect: { 88.780 41.957 92.940 44.837 } (um)
+Cell byte_controller/sr_reg_7_ rect: { 91.605 39.512 102.805 42.392 } (um)
+
+Cell U200 and Cell U239 overlap.
+Cell U200 rect: { 66.983 22.494 71.143 25.375 } (um)
+Cell U239 rect: { 63.928 23.322 67.768 26.202 } (um)
+
+Cell U200 and Cell byte_controller/U54 overlap.
+Cell U200 rect: { 66.983 22.494 71.143 25.375 } (um)
+Cell byte_controller/U54 rect: { 69.056 21.750 74.176 24.630 } (um)
+
+Cell U251 and Cell U273 overlap.
+Cell U251 rect: { 47.218 35.004 51.379 37.884 } (um)
+Cell U273 rect: { 49.776 33.691 51.696 36.571 } (um)
+
+Cell U213 and Cell U224 overlap.
+Cell U213 rect: { 67.141 28.253 72.581 31.133 } (um)
+Cell U224 rect: { 72.045 30.923 77.165 33.803 } (um)
+
+Cell U213 and Cell U218 overlap.
+Cell U213 rect: { 67.141 28.253 72.581 31.133 } (um)
+Cell U218 rect: { 66.624 30.392 70.464 33.272 } (um)
+
+Cell U217 and Cell U234 overlap.
+Cell U217 rect: { 74.385 26.649 79.825 29.529 } (um)
+Cell U234 rect: { 74.067 24.044 76.627 26.924 } (um)
+
+Cell U221 and Cell byte_controller/U60 overlap.
+Cell U221 rect: { 75.488 21.643 80.928 24.523 } (um)
+Cell byte_controller/U60 rect: { 80.829 24.433 85.949 27.313 } (um)
+
+Cell U221 and Cell U234 overlap.
+Cell U221 rect: { 75.488 21.643 80.928 24.523 } (um)
+Cell U234 rect: { 74.067 24.044 76.627 26.924 } (um)
+
+Cell U225 and Cell U235 overlap.
+Cell U225 rect: { 79.546 16.544 84.986 19.424 } (um)
+Cell U235 rect: { 75.515 16.433 80.955 19.313 } (um)
+
+Cell U227 and Cell U229 overlap.
+Cell U227 rect: { 90.298 18.062 95.738 20.942 } (um)
+Cell U229 rect: { 93.852 17.003 99.292 19.883 } (um)
+
+Cell U227 and Cell byte_controller/U58 overlap.
+Cell U227 rect: { 90.298 18.062 95.738 20.942 } (um)
+Cell byte_controller/U58 rect: { 85.401 17.916 90.521 20.796 } (um)
+
+Cell U229 and Cell cr_reg_2_ overlap.
+Cell U229 rect: { 93.852 17.003 99.292 19.883 } (um)
+Cell cr_reg_2_ rect: { 98.184 17.713 109.384 20.593 } (um)
+
+Cell U231 and Cell byte_controller/U57 overlap.
+Cell U231 rect: { 87.069 11.719 92.508 14.599 } (um)
+Cell byte_controller/U57 rect: { 91.184 9.539 96.304 12.419 } (um)
+
+Cell U235 and Cell ctr_reg_2_ overlap.
+Cell U235 rect: { 75.515 16.433 80.955 19.313 } (um)
+Cell ctr_reg_2_ rect: { 65.420 16.005 76.620 18.884 } (um)
+
+Cell U219 and Cell U233 overlap.
+Cell U219 rect: { 77.656 40.515 82.136 43.395 } (um)
+Cell U233 rect: { 80.289 38.472 84.769 41.352 } (um)
+
+Cell ctr_reg_5_ and Cell ctr_reg_6_ overlap.
+Cell ctr_reg_5_ rect: { 43.430 1.931 54.630 4.811 } (um)
+Cell ctr_reg_6_ rect: { 54.468 2.278 65.668 5.158 } (um)
+
+Cell ctr_reg_5_ and Cell txr_reg_0_ overlap.
+Cell ctr_reg_5_ rect: { 43.430 1.931 54.630 4.811 } (um)
+Cell txr_reg_0_ rect: { 34.471 1.245 45.671 4.125 } (um)
+
+Cell ctr_reg_1_ and Cell irq_flag_reg overlap.
+Cell ctr_reg_1_ rect: { 61.713 1.758 72.913 4.638 } (um)
+Cell irq_flag_reg rect: { 71.893 1.113 83.093 3.993 } (um)
+
+Cell ctr_reg_1_ and Cell ctr_reg_6_ overlap.
+Cell ctr_reg_1_ rect: { 61.713 1.758 72.913 4.638 } (um)
+Cell ctr_reg_6_ rect: { 54.468 2.278 65.668 5.158 } (um)
+
+Cell txr_reg_6_ and Cell wb_ack_o_reg overlap.
+Cell txr_reg_6_ rect: { 14.498 3.154 25.698 6.034 } (um)
+Cell wb_ack_o_reg rect: { 11.071 2.138 19.711 5.018 } (um)
+
+Cell txr_reg_5_ and Cell txr_reg_6_ overlap.
+Cell txr_reg_5_ rect: { 21.845 1.303 33.045 4.183 } (um)
+Cell txr_reg_6_ rect: { 14.498 3.154 25.698 6.034 } (um)
+
+Cell txr_reg_4_ and Cell txr_reg_5_ overlap.
+Cell txr_reg_4_ rect: { 28.153 4.008 39.353 6.888 } (um)
+Cell txr_reg_5_ rect: { 21.845 1.303 33.045 4.183 } (um)
+
+Cell txr_reg_0_ and Cell txr_reg_4_ overlap.
+Cell txr_reg_0_ rect: { 34.471 1.245 45.671 4.125 } (um)
+Cell txr_reg_4_ rect: { 28.153 4.008 39.353 6.888 } (um)
+
+Cell cr_reg_7_ and Cell ctr_reg_3_ overlap.
+Cell cr_reg_7_ rect: { 30.436 27.604 41.636 30.484 } (um)
+Cell ctr_reg_3_ rect: { 39.137 24.888 50.337 27.768 } (um)
+
+Cell cr_reg_4_ and Cell cr_reg_5_ overlap.
+Cell cr_reg_4_ rect: { 19.909 8.753 31.109 11.633 } (um)
+Cell cr_reg_5_ rect: { 14.449 11.485 25.649 14.365 } (um)
+
+Cell byte_controller/ld_reg and Cell byte_controller/shift_reg overlap.
+Cell byte_controller/ld_reg rect: { 4.306 24.505 15.506 27.385 } (um)
+Cell byte_controller/shift_reg rect: { 0.005 25.027 11.206 27.907 } (um)
+
+Cell byte_controller/sr_reg_1_ and Cell cr_reg_1_ overlap.
+Cell byte_controller/sr_reg_1_ rect: { 108.154 10.018 119.354 12.898 } (um)
+Cell cr_reg_1_ rect: { 97.213 9.561 108.413 12.441 } (um)
+
+Cell byte_controller/sr_reg_5_ and Cell wb_dat_o_reg_0_ overlap.
+Cell byte_controller/sr_reg_5_ rect: { 99.780 22.021 110.980 24.901 } (um)
+Cell wb_dat_o_reg_0_ rect: { 110.430 23.343 119.070 26.223 } (um)
+
+Cell byte_controller/sr_reg_6_ and Cell wb_dat_o_reg_5_ overlap.
+Cell byte_controller/sr_reg_6_ rect: { 94.365 27.059 105.565 29.939 } (um)
+Cell wb_dat_o_reg_5_ rect: { 103.999 27.722 112.639 30.602 } (um)
+
+Cell byte_controller/sr_reg_7_ and Cell wb_dat_o_reg_7_ overlap.
+Cell byte_controller/sr_reg_7_ rect: { 91.605 39.512 102.805 42.392 } (um)
+Cell wb_dat_o_reg_7_ rect: { 99.802 36.699 108.442 39.579 } (um)
+
+Cell byte_controller/dcnt_reg_0_ and Cell wb_ack_o_reg overlap.
+Cell byte_controller/dcnt_reg_0_ rect: { 0.005 1.946 11.206 4.826 } (um)
+Cell wb_ack_o_reg rect: { 11.071 2.138 19.711 5.018 } (um)
+
+Cell byte_controller/cmd_ack_reg and Cell rxack_reg overlap.
+Cell byte_controller/cmd_ack_reg rect: { 23.807 34.529 35.007 37.409 } (um)
+Cell rxack_reg rect: { 34.264 33.867 45.464 36.747 } (um)
+
+Cell byte_controller/core_cmd_reg_1_ and Cell byte_controller/core_cmd_reg_3_ overlap.
+Cell byte_controller/core_cmd_reg_1_ rect: { 4.324 69.452 15.524 72.332 } (um)
+Cell byte_controller/core_cmd_reg_3_ rect: { 0.005 66.844 11.206 69.724 } (um)
+
+Cell byte_controller/core_cmd_reg_2_ and Cell byte_controller/core_cmd_reg_3_ overlap.
+Cell byte_controller/core_cmd_reg_2_ rect: { 10.483 64.184 21.683 67.064 } (um)
+Cell byte_controller/core_cmd_reg_3_ rect: { 0.005 66.844 11.206 69.724 } (um)
+
+Cell byte_controller/bit_controller/cSDA_reg_1_ and Cell byte_controller/bit_controller/cnt_reg_7_ overlap.
+Cell byte_controller/bit_controller/cSDA_reg_1_ rect: { 9.854 92.533 21.054 95.413 } (um)
+Cell byte_controller/bit_controller/cnt_reg_7_ rect: { 20.268 94.468 31.468 97.348 } (um)
+
+Cell byte_controller/bit_controller/cSCL_reg_1_ and Cell byte_controller/bit_controller/cSDA_reg_1_ overlap.
+Cell byte_controller/bit_controller/cSCL_reg_1_ rect: { 0.005 91.446 11.206 94.326 } (um)
+Cell byte_controller/bit_controller/cSDA_reg_1_ rect: { 9.854 92.533 21.054 95.413 } (um)
+
+Cell byte_controller/bit_controller/filter_cnt_reg_1_ and Cell byte_controller/bit_controller/filter_cnt_reg_5_ overlap.
+Cell byte_controller/bit_controller/filter_cnt_reg_1_ rect: { 89.770 76.617 100.970 79.497 } (um)
+Cell byte_controller/bit_controller/filter_cnt_reg_5_ rect: { 80.467 74.552 91.667 77.432 } (um)
+
+Cell byte_controller/bit_controller/filter_cnt_reg_2_ and Cell byte_controller/bit_controller/sub_260/U27 overlap.
+Cell byte_controller/bit_controller/filter_cnt_reg_2_ rect: { 99.855 65.491 111.055 68.371 } (um)
+Cell byte_controller/bit_controller/sub_260/U27 rect: { 100.873 67.294 102.793 70.174 } (um)
+
+Cell byte_controller/bit_controller/filter_cnt_reg_3_ and Cell byte_controller/bit_controller/sub_260/U27 overlap.
+Cell byte_controller/bit_controller/filter_cnt_reg_3_ rect: { 90.108 70.138 101.308 73.018 } (um)
+Cell byte_controller/bit_controller/sub_260/U27 rect: { 100.873 67.294 102.793 70.174 } (um)
+
+Cell byte_controller/bit_controller/filter_cnt_reg_3_ and Cell byte_controller/bit_controller/sub_260/U20 overlap.
+Cell byte_controller/bit_controller/filter_cnt_reg_3_ rect: { 90.108 70.138 101.308 73.018 } (um)
+Cell byte_controller/bit_controller/sub_260/U20 rect: { 91.558 67.633 95.078 70.513 } (um)
+
+Cell byte_controller/bit_controller/filter_cnt_reg_4_ and Cell byte_controller/bit_controller/filter_cnt_reg_8_ overlap.
+Cell byte_controller/bit_controller/filter_cnt_reg_4_ rect: { 94.311 44.618 105.510 47.498 } (um)
+Cell byte_controller/bit_controller/filter_cnt_reg_8_ rect: { 103.528 42.709 114.728 45.589 } (um)
+
+Cell byte_controller/bit_controller/filter_cnt_reg_9_ and Cell byte_controller/bit_controller/sub_260/U12 overlap.
+Cell byte_controller/bit_controller/filter_cnt_reg_9_ rect: { 104.707 47.525 115.907 50.405 } (um)
+Cell byte_controller/bit_controller/sub_260/U12 rect: { 115.715 48.500 119.235 51.380 } (um)
+
+Cell byte_controller/bit_controller/filter_cnt_reg_11_ and Cell byte_controller/bit_controller/filter_cnt_reg_1_ overlap.
+Cell byte_controller/bit_controller/filter_cnt_reg_11_ rect: { 100.669 75.049 111.869 77.929 } (um)
+Cell byte_controller/bit_controller/filter_cnt_reg_1_ rect: { 89.770 76.617 100.970 79.497 } (um)
+
+Cell byte_controller/bit_controller/filter_cnt_reg_12_ and Cell byte_controller/bit_controller/sub_260/U7 overlap.
+Cell byte_controller/bit_controller/filter_cnt_reg_12_ rect: { 100.306 52.058 111.506 54.938 } (um)
+Cell byte_controller/bit_controller/sub_260/U7 rect: { 100.337 50.248 102.257 53.128 } (um)
+
+Cell byte_controller/bit_controller/c_state_reg_0_ and Cell byte_controller/bit_controller/c_state_reg_5_ overlap.
+Cell byte_controller/bit_controller/c_state_reg_0_ rect: { 72.634 91.039 83.834 93.919 } (um)
+Cell byte_controller/bit_controller/c_state_reg_5_ rect: { 83.007 89.606 94.207 92.487 } (um)
+
+Cell byte_controller/bit_controller/cmd_stop_reg and Cell byte_controller/bit_controller/dout_reg overlap.
+Cell byte_controller/bit_controller/cmd_stop_reg rect: { 56.643 87.790 67.843 90.670 } (um)
+Cell byte_controller/bit_controller/dout_reg rect: { 49.096 89.398 57.736 92.278 } (um)
+
+Cell byte_controller/bit_controller/c_state_reg_6_ and Cell byte_controller/bit_controller/c_state_reg_9_ overlap.
+Cell byte_controller/bit_controller/c_state_reg_6_ rect: { 108.154 84.335 119.354 87.215 } (um)
+Cell byte_controller/bit_controller/c_state_reg_9_ rect: { 97.163 82.176 108.363 85.056 } (um)
+
+Cell byte_controller/bit_controller/c_state_reg_7_ and Cell byte_controller/bit_controller/c_state_reg_8_ overlap.
+Cell byte_controller/bit_controller/c_state_reg_7_ rect: { 84.707 106.100 95.907 108.980 } (um)
+Cell byte_controller/bit_controller/c_state_reg_8_ rect: { 78.344 103.511 89.544 106.391 } (um)
+
+Cell byte_controller/bit_controller/c_state_reg_9_ and Cell byte_controller/bit_controller/filter_cnt_reg_10_ overlap.
+Cell byte_controller/bit_controller/c_state_reg_9_ rect: { 97.163 82.176 108.363 85.056 } (um)
+Cell byte_controller/bit_controller/filter_cnt_reg_10_ rect: { 107.878 79.669 119.078 82.549 } (um)
+
+Cell byte_controller/bit_controller/c_state_reg_12_ and Cell byte_controller/bit_controller/c_state_reg_14_ overlap.
+Cell byte_controller/bit_controller/c_state_reg_12_ rect: { 108.154 89.263 119.354 92.143 } (um)
+Cell byte_controller/bit_controller/c_state_reg_14_ rect: { 97.100 90.691 108.300 93.571 } (um)
+
+Cell byte_controller/bit_controller/al_reg and Cell byte_controller/bit_controller/cnt_reg_14_ overlap.
+Cell byte_controller/bit_controller/al_reg rect: { 56.587 78.453 67.787 81.333 } (um)
+Cell byte_controller/bit_controller/cnt_reg_14_ rect: { 47.166 81.203 58.366 84.083 } (um)
+
+Cell byte_controller/bit_controller/cmd_ack_reg and Cell byte_controller/bit_controller/cnt_reg_12_ overlap.
+Cell byte_controller/bit_controller/cmd_ack_reg rect: { 11.932 88.258 23.132 91.138 } (um)
+Cell byte_controller/bit_controller/cnt_reg_12_ rect: { 22.863 89.706 34.063 92.586 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_15_ and Cell byte_controller/core_txd_reg overlap.
+Cell byte_controller/bit_controller/cnt_reg_15_ rect: { 53.241 71.801 64.441 74.681 } (um)
+Cell byte_controller/core_txd_reg rect: { 64.302 71.959 75.502 74.839 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_15_ and Cell byte_controller/bit_controller/sub_228/U23 overlap.
+Cell byte_controller/bit_controller/cnt_reg_15_ rect: { 53.241 71.801 64.441 74.681 } (um)
+Cell byte_controller/bit_controller/sub_228/U23 rect: { 49.100 71.115 53.900 73.995 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_4_ and Cell byte_controller/bit_controller/cnt_reg_5_ overlap.
+Cell byte_controller/bit_controller/cnt_reg_4_ rect: { 17.290 74.615 28.490 77.495 } (um)
+Cell byte_controller/bit_controller/cnt_reg_5_ rect: { 8.919 76.277 20.119 79.157 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_5_ and Cell byte_controller/core_cmd_reg_0_ overlap.
+Cell byte_controller/bit_controller/cnt_reg_5_ rect: { 8.919 76.277 20.119 79.157 } (um)
+Cell byte_controller/core_cmd_reg_0_ rect: { 0.005 74.701 11.206 77.581 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_6_ and Cell byte_controller/bit_controller/sub_228/U6 overlap.
+Cell byte_controller/bit_controller/cnt_reg_6_ rect: { 11.467 81.883 22.667 84.763 } (um)
+Cell byte_controller/bit_controller/sub_228/U6 rect: { 17.246 84.015 19.166 86.895 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_7_ and Cell byte_controller/bit_controller/sub_228/U11 overlap.
+Cell byte_controller/bit_controller/cnt_reg_7_ rect: { 20.268 94.468 31.468 97.348 } (um)
+Cell byte_controller/bit_controller/sub_228/U11 rect: { 30.396 96.860 32.316 99.740 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_8_ and Cell byte_controller/bit_controller/dout_reg overlap.
+Cell byte_controller/bit_controller/cnt_reg_8_ rect: { 39.053 91.574 50.253 94.454 } (um)
+Cell byte_controller/bit_controller/dout_reg rect: { 49.096 89.398 57.736 92.278 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_8_ and Cell byte_controller/bit_controller/sub_228/U15 overlap.
+Cell byte_controller/bit_controller/cnt_reg_8_ rect: { 39.053 91.574 50.253 94.454 } (um)
+Cell byte_controller/bit_controller/sub_228/U15 rect: { 35.777 94.144 39.297 97.024 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_9_ and Cell byte_controller/bit_controller/sda_oen_reg overlap.
+Cell byte_controller/bit_controller/cnt_reg_9_ rect: { 56.743 102.796 67.943 105.676 } (um)
+Cell byte_controller/bit_controller/sda_oen_reg rect: { 66.161 105.301 77.041 108.181 } (um)
+
+Cell byte_controller/bit_controller/cnt_reg_11_ and Cell byte_controller/bit_controller/sub_228/U11 overlap.
+Cell byte_controller/bit_controller/cnt_reg_11_ rect: { 30.370 99.688 41.570 102.567 } (um)
+Cell byte_controller/bit_controller/sub_228/U11 rect: { 30.396 96.860 32.316 99.740 } (um)
+
+Cell prer_reg_11_ and Cell prer_reg_9_ overlap.
+Cell prer_reg_11_ rect: { 64.538 48.804 75.418 51.684 } (um)
+Cell prer_reg_9_ rect: { 74.858 49.868 85.738 52.748 } (um)
+
+Cell prer_reg_11_ and Cell prer_reg_3_ overlap.
+Cell prer_reg_11_ rect: { 64.538 48.804 75.418 51.684 } (um)
+Cell prer_reg_3_ rect: { 54.339 47.545 65.219 50.425 } (um)
+
+Cell prer_reg_1_ and Cell prer_reg_7_ overlap.
+Cell prer_reg_1_ rect: { 67.623 65.410 78.503 68.290 } (um)
+Cell prer_reg_7_ rect: { 59.311 65.631 70.191 68.511 } (um)
+
+Cell byte_controller/bit_controller/fSCL_reg_1_ and Cell byte_controller/bit_controller/fSDA_reg_1_ overlap.
+Cell byte_controller/bit_controller/fSCL_reg_1_ rect: { 2.248 113.753 13.129 116.633 } (um)
+Cell byte_controller/bit_controller/fSDA_reg_1_ rect: { 0.005 111.673 10.885 114.553 } (um)
+
+Cell byte_controller/bit_controller/dSCL_reg and Cell byte_controller/bit_controller/fSDA_reg_2_ overlap.
+Cell byte_controller/bit_controller/dSCL_reg rect: { 30.836 114.041 41.716 116.921 } (um)
+Cell byte_controller/bit_controller/fSDA_reg_2_ rect: { 19.962 114.348 30.842 117.228 } (um)
+
+Cell byte_controller/bit_controller/dSCL_reg and Cell byte_controller/bit_controller/slave_wait_reg overlap.
+Cell byte_controller/bit_controller/dSCL_reg rect: { 30.836 114.041 41.716 116.921 } (um)
+Cell byte_controller/bit_controller/slave_wait_reg rect: { 41.201 114.188 52.401 117.068 } (um)
+
+Cell wb_dat_o_reg_4_ and Cell wb_dat_o_reg_5_ overlap.
+Cell wb_dat_o_reg_4_ rect: { 110.716 28.221 119.356 31.101 } (um)
+Cell wb_dat_o_reg_5_ rect: { 103.999 27.722 112.639 30.602 } (um)
+
+Cell wb_dat_o_reg_3_ and Cell wb_dat_o_reg_7_ overlap.
+Cell wb_dat_o_reg_3_ rect: { 108.128 38.123 116.768 41.004 } (um)
+Cell wb_dat_o_reg_7_ rect: { 99.802 36.699 108.442 39.579 } (um)
+
+Cell wb_dat_o_reg_2_ and Cell wb_dat_o_reg_6_ overlap.
+Cell wb_dat_o_reg_2_ rect: { 110.716 33.706 119.356 36.586 } (um)
+Cell wb_dat_o_reg_6_ rect: { 103.457 32.831 112.097 35.711 } (um)
+
+Cell byte_controller/bit_controller/dscl_oen_reg and Cell byte_controller/bit_controller/sta_condition_reg overlap.
+Cell byte_controller/bit_controller/dscl_oen_reg rect: { 53.388 112.575 62.028 115.455 } (um)
+Cell byte_controller/bit_controller/sta_condition_reg rect: { 59.841 113.857 71.041 116.737 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U2 and Cell byte_controller/bit_controller/sub_260/U21 overlap.
+Cell byte_controller/bit_controller/sub_260/U2 rect: { 94.202 64.328 96.122 67.208 } (um)
+Cell byte_controller/bit_controller/sub_260/U21 rect: { 92.788 62.938 97.588 65.818 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U3 and Cell byte_controller/bit_controller/sub_260/U7 overlap.
+Cell byte_controller/bit_controller/sub_260/U3 rect: { 98.528 48.218 100.448 51.098 } (um)
+Cell byte_controller/bit_controller/sub_260/U7 rect: { 100.337 50.248 102.257 53.128 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U10 and Cell byte_controller/bit_controller/sub_260/U12 overlap.
+Cell byte_controller/bit_controller/sub_260/U10 rect: { 117.439 45.700 119.359 48.580 } (um)
+Cell byte_controller/bit_controller/sub_260/U12 rect: { 115.715 48.500 119.235 51.380 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U11 and Cell byte_controller/bit_controller/sub_260/U37 overlap.
+Cell byte_controller/bit_controller/sub_260/U11 rect: { 113.662 73.496 115.582 76.376 } (um)
+Cell byte_controller/bit_controller/sub_260/U37 rect: { 114.408 74.327 116.328 77.207 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U11 and Cell byte_controller/bit_controller/sub_260/U26 overlap.
+Cell byte_controller/bit_controller/sub_260/U11 rect: { 113.662 73.496 115.582 76.376 } (um)
+Cell byte_controller/bit_controller/sub_260/U26 rect: { 114.468 76.195 117.988 79.075 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U1 and Cell byte_controller/bit_controller/sub_228/U26 overlap.
+Cell byte_controller/bit_controller/sub_228/U1 rect: { 42.708 81.478 44.628 84.358 } (um)
+Cell byte_controller/bit_controller/sub_228/U26 rect: { 42.187 78.912 45.707 81.792 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U2 and Cell byte_controller/bit_controller/sub_228/U34 overlap.
+Cell byte_controller/bit_controller/sub_228/U2 rect: { 42.155 66.166 44.075 69.046 } (um)
+Cell byte_controller/bit_controller/sub_228/U34 rect: { 43.413 68.187 45.333 71.067 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U10 and Cell byte_controller/bit_controller/sub_228/U18 overlap.
+Cell byte_controller/bit_controller/sub_228/U10 rect: { 25.189 70.038 27.108 72.918 } (um)
+Cell byte_controller/bit_controller/sub_228/U18 rect: { 24.283 69.505 27.803 72.385 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U12 and Cell byte_controller/bit_controller/sub_228/U33 overlap.
+Cell byte_controller/bit_controller/sub_228/U12 rect: { 34.103 94.275 36.023 97.156 } (um)
+Cell byte_controller/bit_controller/sub_228/U33 rect: { 32.876 96.555 34.795 99.436 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U12 and Cell byte_controller/bit_controller/sub_228/U15 overlap.
+Cell byte_controller/bit_controller/sub_228/U12 rect: { 34.103 94.275 36.023 97.156 } (um)
+Cell byte_controller/bit_controller/sub_228/U15 rect: { 35.777 94.144 39.297 97.024 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U13 and Cell byte_controller/bit_controller/sub_228/U28 overlap.
+Cell byte_controller/bit_controller/sub_228/U13 rect: { 37.228 87.031 39.148 89.911 } (um)
+Cell byte_controller/bit_controller/sub_228/U28 rect: { 35.702 87.848 39.222 90.728 } (um)
+
+Cell byte_controller/bit_controller/U3 and Cell byte_controller/bit_controller/sub_228/U42 overlap.
+Cell byte_controller/bit_controller/U3 rect: { 34.807 91.597 36.727 94.478 } (um)
+Cell byte_controller/bit_controller/sub_228/U42 rect: { 35.401 90.511 37.321 93.391 } (um)
+
+Cell byte_controller/bit_controller/U3 and Cell byte_controller/bit_controller/sub_228/U12 overlap.
+Cell byte_controller/bit_controller/U3 rect: { 34.807 91.597 36.727 94.478 } (um)
+Cell byte_controller/bit_controller/sub_228/U12 rect: { 34.103 94.275 36.023 97.156 } (um)
+
+Cell byte_controller/bit_controller/U3 and Cell byte_controller/bit_controller/sub_228/U15 overlap.
+Cell byte_controller/bit_controller/U3 rect: { 34.807 91.597 36.727 94.478 } (um)
+Cell byte_controller/bit_controller/sub_228/U15 rect: { 35.777 94.144 39.297 97.024 } (um)
+
+Cell byte_controller/bit_controller/U4 and Cell byte_controller/bit_controller/U87 overlap.
+Cell byte_controller/bit_controller/U4 rect: { 88.615 81.447 90.535 84.327 } (um)
+Cell byte_controller/bit_controller/U87 rect: { 86.314 83.066 89.834 85.946 } (um)
+
+Cell byte_controller/bit_controller/U6 and Cell byte_controller/bit_controller/filter_cnt_reg_1_ overlap.
+Cell byte_controller/bit_controller/U6 rect: { 94.893 78.937 96.813 81.817 } (um)
+Cell byte_controller/bit_controller/filter_cnt_reg_1_ rect: { 89.770 76.617 100.970 79.497 } (um)
+
+Cell byte_controller/bit_controller/U7 and Cell byte_controller/bit_controller/U8 overlap.
+Cell byte_controller/bit_controller/U7 rect: { 104.126 78.839 106.046 81.719 } (um)
+Cell byte_controller/bit_controller/U8 rect: { 102.587 77.998 104.507 80.878 } (um)
+
+Cell byte_controller/bit_controller/U10 and Cell byte_controller/bit_controller/U59 overlap.
+Cell byte_controller/bit_controller/U10 rect: { 16.108 100.523 18.028 103.403 } (um)
+Cell byte_controller/bit_controller/U59 rect: { 12.003 98.012 16.483 100.892 } (um)
+
+Cell byte_controller/bit_controller/U10 and Cell byte_controller/bit_controller/U62 overlap.
+Cell byte_controller/bit_controller/U10 rect: { 16.108 100.523 18.028 103.403 } (um)
+Cell byte_controller/bit_controller/U62 rect: { 13.088 98.054 17.568 100.934 } (um)
+
+Cell byte_controller/bit_controller/U10 and Cell byte_controller/bit_controller/U63 overlap.
+Cell byte_controller/bit_controller/U10 rect: { 16.108 100.523 18.028 103.403 } (um)
+Cell byte_controller/bit_controller/U63 rect: { 12.405 103.206 16.885 106.086 } (um)
+
+Cell byte_controller/bit_controller/U17 and Cell byte_controller/bit_controller/dSCL_reg overlap.
+Cell byte_controller/bit_controller/U17 rect: { 33.639 111.457 35.559 114.337 } (um)
+Cell byte_controller/bit_controller/dSCL_reg rect: { 30.836 114.041 41.716 116.921 } (um)
+
+Cell byte_controller/bit_controller/U17 and Cell byte_controller/bit_controller/U18 overlap.
+Cell byte_controller/bit_controller/U17 rect: { 33.639 111.457 35.559 114.337 } (um)
+Cell byte_controller/bit_controller/U18 rect: { 34.927 109.242 36.847 112.122 } (um)
+
+Cell byte_controller/bit_controller/U19 and Cell byte_controller/bit_controller/U35 overlap.
+Cell byte_controller/bit_controller/U19 rect: { 70.122 89.106 72.042 91.986 } (um)
+Cell byte_controller/bit_controller/U35 rect: { 69.550 89.041 71.470 91.921 } (um)
+
+Cell byte_controller/bit_controller/U19 and Cell byte_controller/bit_controller/U23 overlap.
+Cell byte_controller/bit_controller/U19 rect: { 70.122 89.106 72.042 91.986 } (um)
+Cell byte_controller/bit_controller/U23 rect: { 68.447 88.281 70.367 91.161 } (um)
+
+Cell byte_controller/bit_controller/U20 and Cell byte_controller/bit_controller/U24 overlap.
+Cell byte_controller/bit_controller/U20 rect: { 77.363 76.770 79.283 79.650 } (um)
+Cell byte_controller/bit_controller/U24 rect: { 77.295 78.086 79.215 80.966 } (um)
+
+Cell byte_controller/bit_controller/U30 and Cell byte_controller/bit_controller/U68 overlap.
+Cell byte_controller/bit_controller/U30 rect: { 76.380 109.480 78.300 112.360 } (um)
+Cell byte_controller/bit_controller/U68 rect: { 76.791 108.242 80.951 111.122 } (um)
+
+Cell byte_controller/bit_controller/U43 and Cell byte_controller/bit_controller/cnt_reg_15_ overlap.
+Cell byte_controller/bit_controller/U43 rect: { 59.349 69.598 61.269 72.478 } (um)
+Cell byte_controller/bit_controller/cnt_reg_15_ rect: { 53.241 71.801 64.441 74.681 } (um)
+
+Cell byte_controller/bit_controller/U45 and Cell byte_controller/bit_controller/U66 overlap.
+Cell byte_controller/bit_controller/U45 rect: { 72.068 80.773 73.988 83.653 } (um)
+Cell byte_controller/bit_controller/U66 rect: { 72.931 81.570 75.811 84.450 } (um)
+
+Cell byte_controller/bit_controller/U45 and Cell byte_controller/bit_controller/busy_reg overlap.
+Cell byte_controller/bit_controller/U45 rect: { 72.068 80.773 73.988 83.653 } (um)
+Cell byte_controller/bit_controller/busy_reg rect: { 61.044 81.871 72.244 84.751 } (um)
+
+Cell byte_controller/bit_controller/U47 and Cell byte_controller/bit_controller/U48 overlap.
+Cell byte_controller/bit_controller/U47 rect: { 39.952 104.388 41.872 107.268 } (um)
+Cell byte_controller/bit_controller/U48 rect: { 40.812 106.717 42.732 109.597 } (um)
+
+Cell byte_controller/bit_controller/U47 and Cell byte_controller/bit_controller/sub_228/U41 overlap.
+Cell byte_controller/bit_controller/U47 rect: { 39.952 104.388 41.872 107.268 } (um)
+Cell byte_controller/bit_controller/sub_228/U41 rect: { 41.060 103.250 42.980 106.130 } (um)
+
+Cell byte_controller/U3 and Cell byte_controller/ack_out_reg overlap.
+Cell byte_controller/U3 rect: { 17.724 26.044 19.645 28.924 } (um)
+Cell byte_controller/ack_out_reg rect: { 17.729 27.090 28.929 29.970 } (um)
+
+Cell byte_controller/U3 and Cell byte_controller/U4 overlap.
+Cell byte_controller/U3 rect: { 17.724 26.044 19.645 28.924 } (um)
+Cell byte_controller/U4 rect: { 17.693 23.768 19.613 26.648 } (um)
+
+Cell byte_controller/U8 and Cell cr_reg_6_ overlap.
+Cell byte_controller/U8 rect: { 19.609 17.215 21.529 20.095 } (um)
+Cell cr_reg_6_ rect: { 11.890 18.580 23.090 21.460 } (um)
+
+Cell byte_controller/U10 and Cell byte_controller/U36 overlap.
+Cell byte_controller/U10 rect: { 26.337 48.815 28.257 51.695 } (um)
+Cell byte_controller/U36 rect: { 24.720 50.209 26.640 53.089 } (um)
+
+Cell byte_controller/U10 and Cell prer_reg_5_ overlap.
+Cell byte_controller/U10 rect: { 26.337 48.815 28.257 51.695 } (um)
+Cell prer_reg_5_ rect: { 26.687 51.018 37.567 53.898 } (um)
+
+Cell byte_controller/U11 and Cell byte_controller/c_state_reg_3_ overlap.
+Cell byte_controller/U11 rect: { 6.033 48.499 7.953 51.379 } (um)
+Cell byte_controller/c_state_reg_3_ rect: { 3.789 47.170 14.989 50.050 } (um)
+
+Cell byte_controller/U12 and Cell byte_controller/U17 overlap.
+Cell byte_controller/U12 rect: { 1.721 18.088 3.641 20.968 } (um)
+Cell byte_controller/U17 rect: { 3.445 18.171 5.365 21.051 } (um)
+
+Cell byte_controller/U12 and Cell byte_controller/dcnt_reg_2_ overlap.
+Cell byte_controller/U12 rect: { 1.721 18.088 3.641 20.968 } (um)
+Cell byte_controller/dcnt_reg_2_ rect: { 0.005 16.744 11.206 19.625 } (um)
+
+Cell byte_controller/U13 and Cell byte_controller/U85 overlap.
+Cell byte_controller/U13 rect: { 0.001 48.968 1.921 51.849 } (um)
+Cell byte_controller/U85 rect: { 0.763 51.781 3.323 54.661 } (um)
+
+Cell byte_controller/U14 and Cell byte_controller/U74 overlap.
+Cell byte_controller/U14 rect: { 21.502 51.899 23.422 54.779 } (um)
+Cell byte_controller/U74 rect: { 20.834 54.654 23.714 57.534 } (um)
+
+Cell byte_controller/U14 and Cell byte_controller/U87 overlap.
+Cell byte_controller/U14 rect: { 21.502 51.899 23.422 54.779 } (um)
+Cell byte_controller/U87 rect: { 19.337 50.105 22.857 52.985 } (um)
+
+Cell byte_controller/U17 and Cell byte_controller/dcnt_reg_2_ overlap.
+Cell byte_controller/U17 rect: { 3.445 18.171 5.365 21.051 } (um)
+Cell byte_controller/dcnt_reg_2_ rect: { 0.005 16.744 11.206 19.625 } (um)
+
+Cell byte_controller/U28 and Cell byte_controller/U31 overlap.
+Cell byte_controller/U28 rect: { 28.283 38.127 30.203 41.008 } (um)
+Cell byte_controller/U31 rect: { 26.936 38.566 28.856 41.446 } (um)
+
+Cell byte_controller/U32 and Cell byte_controller/U94 overlap.
+Cell byte_controller/U32 rect: { 19.316 32.790 21.236 35.670 } (um)
+Cell byte_controller/U94 rect: { 19.755 34.626 22.315 37.506 } (um)
+
+Cell byte_controller/U33 and Cell cr_reg_6_ overlap.
+Cell byte_controller/U33 rect: { 18.818 17.163 20.738 20.043 } (um)
+Cell cr_reg_6_ rect: { 11.890 18.580 23.090 21.460 } (um)
+
+Cell byte_controller/U33 and Cell byte_controller/U8 overlap.
+Cell byte_controller/U33 rect: { 18.818 17.163 20.738 20.043 } (um)
+Cell byte_controller/U8 rect: { 19.609 17.215 21.529 20.095 } (um)
+
+Cell byte_controller/U34 and Cell byte_controller/U92 overlap.
+Cell byte_controller/U34 rect: { 15.052 31.278 16.972 34.158 } (um)
+Cell byte_controller/U92 rect: { 13.329 33.546 16.529 36.426 } (um)
+
+Cell byte_controller/U36 and Cell byte_controller/U9 overlap.
+Cell byte_controller/U36 rect: { 24.720 50.209 26.640 53.089 } (um)
+Cell byte_controller/U9 rect: { 24.144 52.456 26.704 55.336 } (um)
+
+Cell U252 and Cell ctr_reg_4_ overlap.
+Cell U252 rect: { 51.088 18.339 53.008 21.219 } (um)
+Cell ctr_reg_4_ rect: { 40.608 16.938 51.808 19.818 } (um)
+
+Cell U252 and Cell U262 overlap.
+Cell U252 rect: { 51.088 18.339 53.008 21.219 } (um)
+Cell U262 rect: { 52.907 15.547 54.827 18.427 } (um)
+
+Cell U253 and Cell ctr_reg_4_ overlap.
+Cell U253 rect: { 40.423 17.524 42.343 20.404 } (um)
+Cell ctr_reg_4_ rect: { 40.608 16.938 51.808 19.818 } (um)
+
+Cell U258 and Cell prer_reg_10_ overlap.
+Cell U258 rect: { 85.558 42.642 87.478 45.522 } (um)
+Cell prer_reg_10_ rect: { 75.930 45.013 86.810 47.893 } (um)
+
+Cell U258 and Cell byte_controller/bit_controller/U116 overlap.
+Cell U258 rect: { 85.558 42.642 87.478 45.522 } (um)
+Cell byte_controller/bit_controller/U116 rect: { 86.509 41.328 90.669 44.208 } (um)
+
+Cell U260 and Cell U264 overlap.
+Cell U260 rect: { 61.200 21.217 63.120 24.097 } (um)
+Cell U264 rect: { 60.935 18.476 64.135 21.356 } (um)
+
+Cell U267 and Cell U268 overlap.
+Cell U267 rect: { 98.698 32.268 100.618 35.148 } (um)
+Cell U268 rect: { 98.086 32.046 100.006 34.926 } (um)
+
+Cell U267 and Cell U271 overlap.
+Cell U267 rect: { 98.698 32.268 100.618 35.148 } (um)
+Cell U271 rect: { 98.578 32.144 100.498 35.023 } (um)
+
+Cell U267 and Cell U270 overlap.
+Cell U267 rect: { 98.698 32.268 100.618 35.148 } (um)
+Cell U270 rect: { 98.647 31.840 100.567 34.720 } (um)
+
+Cell U268 and Cell U271 overlap.
+Cell U268 rect: { 98.086 32.046 100.006 34.926 } (um)
+Cell U271 rect: { 98.578 32.144 100.498 35.023 } (um)
+
+Cell U268 and Cell U270 overlap.
+Cell U268 rect: { 98.086 32.046 100.006 34.926 } (um)
+Cell U270 rect: { 98.647 31.840 100.567 34.720 } (um)
+
+Cell byte_controller/bit_controller/U14 and Cell byte_controller/bit_controller/U28 overlap.
+Cell byte_controller/bit_controller/U14 rect: { 73.366 96.835 75.286 99.715 } (um)
+Cell byte_controller/bit_controller/U28 rect: { 72.508 98.759 74.428 101.639 } (um)
+
+Cell byte_controller/bit_controller/U14 and Cell byte_controller/bit_controller/U15 overlap.
+Cell byte_controller/bit_controller/U14 rect: { 73.366 96.835 75.286 99.715 } (um)
+Cell byte_controller/bit_controller/U15 rect: { 75.146 97.106 77.066 99.986 } (um)
+
+Cell byte_controller/bit_controller/U23 and Cell byte_controller/bit_controller/U35 overlap.
+Cell byte_controller/bit_controller/U23 rect: { 68.447 88.281 70.367 91.161 } (um)
+Cell byte_controller/bit_controller/U35 rect: { 69.550 89.041 71.470 91.921 } (um)
+
+Cell byte_controller/bit_controller/U23 and Cell byte_controller/bit_controller/U71 overlap.
+Cell byte_controller/bit_controller/U23 rect: { 68.447 88.281 70.367 91.161 } (um)
+Cell byte_controller/bit_controller/U71 rect: { 69.930 85.669 73.130 88.549 } (um)
+
+Cell byte_controller/bit_controller/U26 and Cell byte_controller/bit_controller/U65 overlap.
+Cell byte_controller/bit_controller/U26 rect: { 77.930 85.038 79.850 87.918 } (um)
+Cell byte_controller/bit_controller/U65 rect: { 74.803 87.722 78.643 90.602 } (um)
+
+Cell byte_controller/bit_controller/U26 and Cell byte_controller/bit_controller/U83 overlap.
+Cell byte_controller/bit_controller/U26 rect: { 77.930 85.038 79.850 87.918 } (um)
+Cell byte_controller/bit_controller/U83 rect: { 79.319 83.841 82.519 86.721 } (um)
+
+Cell byte_controller/bit_controller/U26 and Cell byte_controller/bit_controller/U89 overlap.
+Cell byte_controller/bit_controller/U26 rect: { 77.930 85.038 79.850 87.918 } (um)
+Cell byte_controller/bit_controller/U89 rect: { 79.234 84.546 81.794 87.426 } (um)
+
+Cell byte_controller/U15 and Cell byte_controller/U71 overlap.
+Cell byte_controller/U15 rect: { 11.682 53.064 13.602 55.944 } (um)
+Cell byte_controller/U71 rect: { 11.398 50.680 14.918 53.560 } (um)
+
+Cell byte_controller/U19 and Cell byte_controller/U93 overlap.
+Cell byte_controller/U19 rect: { 12.792 41.009 14.712 43.889 } (um)
+Cell byte_controller/U93 rect: { 12.491 38.151 16.971 41.031 } (um)
+
+Cell byte_controller/U20 and Cell byte_controller/U77 overlap.
+Cell byte_controller/U20 rect: { 17.275 48.410 19.195 51.290 } (um)
+Cell byte_controller/U77 rect: { 19.137 46.145 22.017 49.025 } (um)
+
+Cell byte_controller/U20 and Cell byte_controller/U25 overlap.
+Cell byte_controller/U20 rect: { 17.275 48.410 19.195 51.290 } (um)
+Cell byte_controller/U25 rect: { 18.154 46.060 20.073 48.940 } (um)
+
+Cell byte_controller/U21 and Cell byte_controller/bit_controller/cnt_reg_1_ overlap.
+Cell byte_controller/U21 rect: { 20.395 59.185 22.315 62.066 } (um)
+Cell byte_controller/bit_controller/cnt_reg_1_ rect: { 19.034 59.950 30.234 62.830 } (um)
+
+Cell byte_controller/U22 and Cell byte_controller/c_state_reg_4_ overlap.
+Cell byte_controller/U22 rect: { 6.346 59.882 8.265 62.762 } (um)
+Cell byte_controller/c_state_reg_4_ rect: { 0.396 61.150 11.595 64.030 } (um)
+
+Cell byte_controller/U24 and Cell byte_controller/U35 overlap.
+Cell byte_controller/U24 rect: { 23.459 41.630 25.379 44.510 } (um)
+Cell byte_controller/U35 rect: { 23.793 41.568 25.713 44.448 } (um)
+
+Cell byte_controller/U25 and Cell byte_controller/U77 overlap.
+Cell byte_controller/U25 rect: { 18.154 46.060 20.073 48.940 } (um)
+Cell byte_controller/U77 rect: { 19.137 46.145 22.017 49.025 } (um)
+
+Cell byte_controller/U25 and Cell byte_controller/U95 overlap.
+Cell byte_controller/U25 rect: { 18.154 46.060 20.073 48.940 } (um)
+Cell byte_controller/U95 rect: { 16.560 43.518 19.440 46.398 } (um)
+
+Cell byte_controller/U31 and Cell byte_controller/U37 overlap.
+Cell byte_controller/U31 rect: { 26.936 38.566 28.856 41.446 } (um)
+Cell byte_controller/U37 rect: { 26.816 41.318 28.736 44.198 } (um)
+
+Cell U256 and Cell U265 overlap.
+Cell U256 rect: { 63.167 39.706 65.087 42.586 } (um)
+Cell U265 rect: { 61.886 38.536 63.806 41.416 } (um)
+
+Cell U256 and Cell prer_reg_12_ overlap.
+Cell U256 rect: { 63.167 39.706 65.087 42.586 } (um)
+Cell prer_reg_12_ rect: { 58.724 41.998 69.604 44.878 } (um)
+
+Cell U270 and Cell U271 overlap.
+Cell U270 rect: { 98.647 31.840 100.567 34.720 } (um)
+Cell U271 rect: { 98.578 32.144 100.498 35.023 } (um)
+
+Cell U182 and Cell U222 overlap.
+Cell U182 rect: { 59.085 23.820 61.645 26.700 } (um)
+Cell U222 rect: { 60.378 25.038 64.218 27.918 } (um)
+
+Cell U182 and Cell U260 overlap.
+Cell U182 rect: { 59.085 23.820 61.645 26.700 } (um)
+Cell U260 rect: { 61.200 21.217 63.120 24.097 } (um)
+
+Cell U211 and Cell U259 overlap.
+Cell U211 rect: { 32.807 17.256 35.367 20.136 } (um)
+Cell U259 rect: { 31.515 18.811 33.435 21.691 } (um)
+
+Cell U212 and Cell U215 overlap.
+Cell U212 rect: { 73.401 39.705 75.961 42.585 } (um)
+Cell U215 rect: { 71.421 42.324 75.901 45.204 } (um)
+
+Cell U216 and Cell U223 overlap.
+Cell U216 rect: { 79.011 32.932 81.571 35.812 } (um)
+Cell U223 rect: { 76.711 35.244 81.191 38.124 } (um)
+
+Cell U216 and Cell U220 overlap.
+Cell U216 rect: { 79.011 32.932 81.571 35.812 } (um)
+Cell U220 rect: { 77.834 30.934 80.394 33.814 } (um)
+
+Cell U230 and Cell U236 overlap.
+Cell U230 rect: { 90.109 26.508 92.669 29.387 } (um)
+Cell U236 rect: { 89.688 29.149 92.568 32.029 } (um)
+
+Cell U234 and Cell byte_controller/U54 overlap.
+Cell U234 rect: { 74.067 24.044 76.627 26.924 } (um)
+Cell byte_controller/U54 rect: { 69.056 21.750 74.176 24.630 } (um)
+
+Cell U240 and Cell U241 overlap.
+Cell U240 rect: { 84.810 31.819 87.370 34.699 } (um)
+Cell U241 rect: { 83.312 31.163 85.873 34.043 } (um)
+
+Cell byte_controller/U67 and Cell byte_controller/ld_reg overlap.
+Cell byte_controller/U67 rect: { 13.134 25.542 15.694 28.422 } (um)
+Cell byte_controller/ld_reg rect: { 4.306 24.505 15.506 27.385 } (um)
+
+Cell byte_controller/U72 and Cell byte_controller/U83 overlap.
+Cell byte_controller/U72 rect: { 3.801 52.132 6.361 55.012 } (um)
+Cell byte_controller/U83 rect: { 5.493 54.555 8.053 57.435 } (um)
+
+Cell byte_controller/U79 and Cell byte_controller/U83 overlap.
+Cell byte_controller/U79 rect: { 6.907 54.208 9.467 57.088 } (um)
+Cell byte_controller/U83 rect: { 5.493 54.555 8.053 57.435 } (um)
+
+Cell byte_controller/U80 and Cell byte_controller/c_state_reg_3_ overlap.
+Cell byte_controller/U80 rect: { 13.960 45.196 16.520 48.076 } (um)
+Cell byte_controller/c_state_reg_3_ rect: { 3.789 47.170 14.989 50.050 } (um)
+
+Cell byte_controller/U97 and Cell byte_controller/dcnt_reg_1_ overlap.
+Cell byte_controller/U97 rect: { 2.241 10.569 4.801 13.449 } (um)
+Cell byte_controller/dcnt_reg_1_ rect: { 0.005 8.901 11.206 11.781 } (um)
+
+Cell byte_controller/U101 and Cell byte_controller/U93 overlap.
+Cell byte_controller/U101 rect: { 10.675 38.869 13.236 41.749 } (um)
+Cell byte_controller/U93 rect: { 12.491 38.151 16.971 41.031 } (um)
+
+Cell byte_controller/U101 and Cell byte_controller/U19 overlap.
+Cell byte_controller/U101 rect: { 10.675 38.869 13.236 41.749 } (um)
+Cell byte_controller/U19 rect: { 12.792 41.009 14.712 43.889 } (um)
+
+Cell byte_controller/U101 and Cell byte_controller/c_state_reg_0_ overlap.
+Cell byte_controller/U101 rect: { 10.675 38.869 13.236 41.749 } (um)
+Cell byte_controller/c_state_reg_0_ rect: { 1.395 41.273 12.595 44.153 } (um)
+
+Cell byte_controller/bit_controller/U69 and Cell byte_controller/bit_controller/c_state_reg_8_ overlap.
+Cell byte_controller/bit_controller/U69 rect: { 79.134 103.129 81.694 106.009 } (um)
+Cell byte_controller/bit_controller/c_state_reg_8_ rect: { 78.344 103.511 89.544 106.391 } (um)
+
+Cell byte_controller/bit_controller/U129 and Cell byte_controller/bit_controller/sto_condition_reg overlap.
+Cell byte_controller/bit_controller/U129 rect: { 48.254 106.719 50.814 109.599 } (um)
+Cell byte_controller/bit_controller/sto_condition_reg rect: { 40.508 109.091 51.708 111.971 } (um)
+
+Cell byte_controller/bit_controller/U138 and Cell byte_controller/bit_controller/sda_oen_reg overlap.
+Cell byte_controller/bit_controller/U138 rect: { 68.362 102.439 70.922 105.319 } (um)
+Cell byte_controller/bit_controller/sda_oen_reg rect: { 66.161 105.301 77.041 108.181 } (um)
+
+Cell byte_controller/U77 and Cell byte_controller/U95 overlap.
+Cell byte_controller/U77 rect: { 19.137 46.145 22.017 49.025 } (um)
+Cell byte_controller/U95 rect: { 16.560 43.518 19.440 46.398 } (um)
+
+Cell byte_controller/U78 and Cell byte_controller/U79 overlap.
+Cell byte_controller/U78 rect: { 8.273 55.261 11.153 58.142 } (um)
+Cell byte_controller/U79 rect: { 6.907 54.208 9.467 57.088 } (um)
+
+Cell byte_controller/U84 and Cell byte_controller/U88 overlap.
+Cell byte_controller/U84 rect: { 0.698 57.834 3.578 60.714 } (um)
+Cell byte_controller/U88 rect: { 0.871 55.344 3.431 58.224 } (um)
+
+Cell byte_controller/bit_controller/U66 and Cell byte_controller/bit_controller/U88 overlap.
+Cell byte_controller/bit_controller/U66 rect: { 72.931 81.570 75.811 84.450 } (um)
+Cell byte_controller/bit_controller/U88 rect: { 75.373 81.535 78.573 84.415 } (um)
+
+Cell byte_controller/bit_controller/U109 and Cell byte_controller/bit_controller/U137 overlap.
+Cell byte_controller/bit_controller/U109 rect: { 84.576 97.645 87.456 100.525 } (um)
+Cell byte_controller/bit_controller/U137 rect: { 87.318 97.414 90.518 100.294 } (um)
+
+Cell byte_controller/bit_controller/U109 and Cell byte_controller/bit_controller/U42 overlap.
+Cell byte_controller/bit_controller/U109 rect: { 84.576 97.645 87.456 100.525 } (um)
+Cell byte_controller/bit_controller/U42 rect: { 86.060 96.716 87.980 99.596 } (um)
+
+Cell byte_controller/bit_controller/U155 and Cell byte_controller/bit_controller/filter_cnt_reg_3_ overlap.
+Cell byte_controller/bit_controller/U155 rect: { 97.268 71.683 100.148 74.563 } (um)
+Cell byte_controller/bit_controller/filter_cnt_reg_3_ rect: { 90.108 70.138 101.308 73.018 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U22 and Cell byte_controller/bit_controller/sub_260/U23 overlap.
+Cell byte_controller/bit_controller/sub_260/U22 rect: { 102.323 59.411 104.243 62.291 } (um)
+Cell byte_controller/bit_controller/sub_260/U23 rect: { 102.649 57.514 107.449 60.394 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U28 and Cell byte_controller/bit_controller/sub_260/U30 overlap.
+Cell byte_controller/bit_controller/sub_260/U28 rect: { 96.908 53.941 98.828 56.821 } (um)
+Cell byte_controller/bit_controller/sub_260/U30 rect: { 95.013 56.210 96.933 59.090 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U32 and Cell byte_controller/bit_controller/sub_260/U9 overlap.
+Cell byte_controller/bit_controller/sub_260/U32 rect: { 114.994 50.717 116.914 53.597 } (um)
+Cell byte_controller/bit_controller/sub_260/U9 rect: { 115.205 52.565 117.125 55.445 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U33 and Cell byte_controller/bit_controller/sub_260/U4 overlap.
+Cell byte_controller/bit_controller/sub_260/U33 rect: { 89.033 48.593 90.953 51.473 } (um)
+Cell byte_controller/bit_controller/sub_260/U4 rect: { 90.722 48.468 92.642 51.348 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U35 and Cell byte_controller/bit_controller/sub_260/U9 overlap.
+Cell byte_controller/bit_controller/sub_260/U35 rect: { 116.019 54.457 117.939 57.337 } (um)
+Cell byte_controller/bit_controller/sub_260/U9 rect: { 115.205 52.565 117.125 55.445 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U24 and Cell byte_controller/bit_controller/sub_228/U25 overlap.
+Cell byte_controller/bit_controller/sub_228/U24 rect: { 51.493 76.199 53.413 79.079 } (um)
+Cell byte_controller/bit_controller/sub_228/U25 rect: { 48.894 76.817 53.694 79.697 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U31 and Cell byte_controller/bit_controller/sub_228/U37 overlap.
+Cell byte_controller/bit_controller/sub_228/U31 rect: { 19.127 67.691 21.047 70.571 } (um)
+Cell byte_controller/bit_controller/sub_228/U37 rect: { 18.104 69.579 20.024 72.459 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U31 and Cell byte_controller/bit_controller/sub_228/U4 overlap.
+Cell byte_controller/bit_controller/sub_228/U31 rect: { 19.127 67.691 21.047 70.571 } (um)
+Cell byte_controller/bit_controller/sub_228/U4 rect: { 17.952 68.399 19.872 71.279 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U36 and Cell byte_controller/bit_controller/sub_228/U8 overlap.
+Cell byte_controller/bit_controller/sub_228/U36 rect: { 51.776 104.399 53.696 107.279 } (um)
+Cell byte_controller/bit_controller/sub_228/U8 rect: { 51.148 104.352 53.068 107.232 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U36 and Cell byte_controller/bit_controller/sub_228/U38 overlap.
+Cell byte_controller/bit_controller/sub_228/U36 rect: { 51.776 104.399 53.696 107.279 } (um)
+Cell byte_controller/bit_controller/sub_228/U38 rect: { 51.727 103.049 53.647 105.929 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U37 and Cell byte_controller/bit_controller/sub_228/U4 overlap.
+Cell byte_controller/bit_controller/sub_228/U37 rect: { 18.104 69.579 20.024 72.459 } (um)
+Cell byte_controller/bit_controller/sub_228/U4 rect: { 17.952 68.399 19.872 71.279 } (um)
+
+Cell byte_controller/bit_controller/sub_228/U38 and Cell byte_controller/bit_controller/sub_228/U8 overlap.
+Cell byte_controller/bit_controller/sub_228/U38 rect: { 51.727 103.049 53.647 105.929 } (um)
+Cell byte_controller/bit_controller/sub_228/U8 rect: { 51.148 104.352 53.068 107.232 } (um)
+
+Cell byte_controller/bit_controller/U12 and Cell byte_controller/bit_controller/U21 overlap.
+Cell byte_controller/bit_controller/U12 rect: { 50.177 84.929 52.097 87.809 } (um)
+Cell byte_controller/bit_controller/U21 rect: { 50.638 85.951 53.518 88.831 } (um)
+
+Cell byte_controller/bit_controller/U13 and Cell byte_controller/bit_controller/U9 overlap.
+Cell byte_controller/bit_controller/U13 rect: { 80.673 97.713 82.593 100.593 } (um)
+Cell byte_controller/bit_controller/U9 rect: { 80.456 98.462 82.376 101.342 } (um)
+
+Cell byte_controller/bit_controller/U13 and Cell byte_controller/bit_controller/U70 overlap.
+Cell byte_controller/bit_controller/U13 rect: { 80.673 97.713 82.593 100.593 } (um)
+Cell byte_controller/bit_controller/U70 rect: { 78.427 95.182 81.947 98.062 } (um)
+
+Cell byte_controller/bit_controller/U16 and Cell byte_controller/bit_controller/cnt_reg_14_ overlap.
+Cell byte_controller/bit_controller/U16 rect: { 56.234 82.496 58.154 85.376 } (um)
+Cell byte_controller/bit_controller/cnt_reg_14_ rect: { 47.166 81.203 58.366 84.083 } (um)
+
+Cell byte_controller/bit_controller/U33 and Cell byte_controller/bit_controller/dSDA_reg overlap.
+Cell byte_controller/bit_controller/U33 rect: { 35.602 103.671 37.522 106.551 } (um)
+Cell byte_controller/bit_controller/dSDA_reg rect: { 24.957 105.202 35.837 108.082 } (um)
+
+Cell byte_controller/bit_controller/U36 and Cell byte_controller/bit_controller/cSCL_reg_0_ overlap.
+Cell byte_controller/bit_controller/U36 rect: { 7.476 83.435 9.396 86.315 } (um)
+Cell byte_controller/bit_controller/cSCL_reg_0_ rect: { 0.156 80.621 11.356 83.501 } (um)
+
+Cell byte_controller/bit_controller/U37 and Cell byte_controller/bit_controller/cnt_reg_6_ overlap.
+Cell byte_controller/bit_controller/U37 rect: { 12.632 84.094 14.552 86.974 } (um)
+Cell byte_controller/bit_controller/cnt_reg_6_ rect: { 11.467 81.883 22.667 84.763 } (um)
+
+Cell byte_controller/bit_controller/U38 and Cell byte_controller/bit_controller/cmd_stop_reg overlap.
+Cell byte_controller/bit_controller/U38 rect: { 58.841 85.198 60.761 88.079 } (um)
+Cell byte_controller/bit_controller/cmd_stop_reg rect: { 56.643 87.790 67.843 90.670 } (um)
+
+Cell byte_controller/bit_controller/U41 and Cell byte_controller/bit_controller/sub_260/U21 overlap.
+Cell byte_controller/bit_controller/U41 rect: { 95.676 61.769 97.596 64.649 } (um)
+Cell byte_controller/bit_controller/sub_260/U21 rect: { 92.788 62.938 97.588 65.818 } (um)
+
+Cell byte_controller/bit_controller/U41 and Cell byte_controller/bit_controller/sub_260/U2 overlap.
+Cell byte_controller/bit_controller/U41 rect: { 95.676 61.769 97.596 64.649 } (um)
+Cell byte_controller/bit_controller/sub_260/U2 rect: { 94.202 64.328 96.122 67.208 } (um)
+
+Cell byte_controller/bit_controller/U41 and Cell byte_controller/bit_controller/sub_260/U19 overlap.
+Cell byte_controller/bit_controller/U41 rect: { 95.676 61.769 97.596 64.649 } (um)
+Cell byte_controller/bit_controller/sub_260/U19 rect: { 97.034 59.429 100.554 62.309 } (um)
+
+Cell byte_controller/bit_controller/U44 and Cell byte_controller/bit_controller/U72 overlap.
+Cell byte_controller/bit_controller/U44 rect: { 70.458 76.504 72.378 79.384 } (um)
+Cell byte_controller/bit_controller/U72 rect: { 69.538 76.577 72.418 79.457 } (um)
+
+Cell byte_controller/bit_controller/U48 and Cell byte_controller/bit_controller/sto_condition_reg overlap.
+Cell byte_controller/bit_controller/U48 rect: { 40.812 106.717 42.732 109.597 } (um)
+Cell byte_controller/bit_controller/sto_condition_reg rect: { 40.508 109.091 51.708 111.971 } (um)
+
+Cell byte_controller/U5 and Cell byte_controller/U74 overlap.
+Cell byte_controller/U5 rect: { 20.585 55.209 22.505 58.089 } (um)
+Cell byte_controller/U74 rect: { 20.834 54.654 23.714 57.534 } (um)
+
+Cell byte_controller/U6 and Cell byte_controller/dcnt_reg_2_ overlap.
+Cell byte_controller/U6 rect: { 7.849 17.313 9.769 20.193 } (um)
+Cell byte_controller/dcnt_reg_2_ rect: { 0.005 16.744 11.206 19.625 } (um)
+
+Cell byte_controller/U16 and Cell byte_controller/U67 overlap.
+Cell byte_controller/U16 rect: { 15.165 24.929 17.084 27.809 } (um)
+Cell byte_controller/U67 rect: { 13.134 25.542 15.694 28.422 } (um)
+
+Cell byte_controller/U16 and Cell byte_controller/ld_reg overlap.
+Cell byte_controller/U16 rect: { 15.165 24.929 17.084 27.809 } (um)
+Cell byte_controller/ld_reg rect: { 4.306 24.505 15.506 27.385 } (um)
+
+Cell byte_controller/U18 and Cell prer_reg_0_ overlap.
+Cell byte_controller/U18 rect: { 48.184 55.815 50.104 58.694 } (um)
+Cell prer_reg_0_ rect: { 45.679 57.741 56.559 60.621 } (um)
+
+Cell byte_controller/U23 and Cell byte_controller/U97 overlap.
+Cell byte_controller/U23 rect: { 3.397 11.413 5.317 14.293 } (um)
+Cell byte_controller/U97 rect: { 2.241 10.569 4.801 13.449 } (um)
+
+Cell byte_controller/U23 and Cell byte_controller/dcnt_reg_1_ overlap.
+Cell byte_controller/U23 rect: { 3.397 11.413 5.317 14.293 } (um)
+Cell byte_controller/dcnt_reg_1_ rect: { 0.005 8.901 11.206 11.781 } (um)
+
+Cell byte_controller/U26 and Cell byte_controller/U29 overlap.
+Cell byte_controller/U26 rect: { 20.687 31.930 22.607 34.810 } (um)
+Cell byte_controller/U29 rect: { 20.373 32.907 22.293 35.787 } (um)
+
+Cell byte_controller/U26 and Cell byte_controller/U94 overlap.
+Cell byte_controller/U26 rect: { 20.687 31.930 22.607 34.810 } (um)
+Cell byte_controller/U94 rect: { 19.755 34.626 22.315 37.506 } (um)
+
+Cell byte_controller/U26 and Cell byte_controller/U32 overlap.
+Cell byte_controller/U26 rect: { 20.687 31.930 22.607 34.810 } (um)
+Cell byte_controller/U32 rect: { 19.316 32.790 21.236 35.670 } (um)
+
+Cell byte_controller/U29 and Cell byte_controller/U94 overlap.
+Cell byte_controller/U29 rect: { 20.373 32.907 22.293 35.787 } (um)
+Cell byte_controller/U94 rect: { 19.755 34.626 22.315 37.506 } (um)
+
+Cell byte_controller/U29 and Cell byte_controller/U32 overlap.
+Cell byte_controller/U29 rect: { 20.373 32.907 22.293 35.787 } (um)
+Cell byte_controller/U32 rect: { 19.316 32.790 21.236 35.670 } (um)
+
+Cell byte_controller/U30 and Cell byte_controller/U96 overlap.
+Cell byte_controller/U30 rect: { 13.623 29.979 15.543 32.859 } (um)
+Cell byte_controller/U96 rect: { 11.841 32.278 15.041 35.158 } (um)
+
+Cell byte_controller/U30 and Cell byte_controller/U34 overlap.
+Cell byte_controller/U30 rect: { 13.623 29.979 15.543 32.859 } (um)
+Cell byte_controller/U34 rect: { 15.052 31.278 16.972 34.158 } (um)
+
+Cell U236 and Cell U237 overlap.
+Cell U236 rect: { 89.688 29.149 92.568 32.029 } (um)
+Cell U237 rect: { 89.391 30.552 92.271 33.432 } (um)
+
+Cell U238 and Cell U243 overlap.
+Cell U238 rect: { 92.609 33.184 95.489 36.064 } (um)
+Cell U243 rect: { 91.791 34.207 94.671 37.087 } (um)
+
+Cell byte_controller/bit_controller/U131 and Cell byte_controller/bit_controller/U132 overlap.
+Cell byte_controller/bit_controller/U131 rect: { 68.334 93.859 71.214 96.739 } (um)
+Cell byte_controller/bit_controller/U132 rect: { 65.841 91.200 68.722 94.080 } (um)
+
+Cell byte_controller/bit_controller/U139 and Cell byte_controller/bit_controller/cmd_stop_reg overlap.
+Cell byte_controller/bit_controller/U139 rect: { 60.237 90.557 63.117 93.437 } (um)
+Cell byte_controller/bit_controller/cmd_stop_reg rect: { 56.643 87.790 67.843 90.670 } (um)
+
+Cell U178 and Cell U255 overlap.
+Cell U178 rect: { 54.115 18.830 57.315 21.710 } (um)
+Cell U255 rect: { 56.442 21.488 58.362 24.368 } (um)
+
+Cell byte_controller/bit_controller/U83 and Cell byte_controller/bit_controller/U89 overlap.
+Cell byte_controller/bit_controller/U83 rect: { 79.319 83.841 82.519 86.721 } (um)
+Cell byte_controller/bit_controller/U89 rect: { 79.234 84.546 81.794 87.426 } (um)
+
+Cell byte_controller/bit_controller/U110 and Cell byte_controller/bit_controller/U137 overlap.
+Cell byte_controller/bit_controller/U110 rect: { 90.197 97.679 93.397 100.559 } (um)
+Cell byte_controller/bit_controller/U137 rect: { 87.318 97.414 90.518 100.294 } (um)
+
+Cell byte_controller/bit_controller/U135 and Cell byte_controller/bit_controller/U136 overlap.
+Cell byte_controller/bit_controller/U135 rect: { 101.278 100.194 104.478 103.073 } (um)
+Cell byte_controller/bit_controller/U136 rect: { 103.201 99.652 106.081 102.532 } (um)
+
+Cell byte_controller/bit_controller/U137 and Cell byte_controller/bit_controller/U42 overlap.
+Cell byte_controller/bit_controller/U137 rect: { 87.318 97.414 90.518 100.294 } (um)
+Cell byte_controller/bit_controller/U42 rect: { 86.060 96.716 87.980 99.596 } (um)
+
+Cell byte_controller/bit_controller/U140 and Cell byte_controller/bit_controller/U33 overlap.
+Cell byte_controller/bit_controller/U140 rect: { 35.982 106.340 39.182 109.220 } (um)
+Cell byte_controller/bit_controller/U33 rect: { 35.602 103.671 37.522 106.551 } (um)
+
+Cell byte_controller/bit_controller/U156 and Cell byte_controller/bit_controller/sub_260/U31 overlap.
+Cell byte_controller/bit_controller/U156 rect: { 113.181 66.824 116.381 69.704 } (um)
+Cell byte_controller/bit_controller/sub_260/U31 rect: { 116.350 68.450 118.270 71.330 } (um)
+
+Cell byte_controller/bit_controller/U156 and Cell byte_controller/bit_controller/U157 overlap.
+Cell byte_controller/bit_controller/U156 rect: { 113.181 66.824 116.381 69.704 } (um)
+Cell byte_controller/bit_controller/U157 rect: { 115.081 65.501 117.961 68.381 } (um)
+
+Cell byte_controller/bit_controller/U156 and Cell byte_controller/bit_controller/sub_260/U1 overlap.
+Cell byte_controller/bit_controller/U156 rect: { 113.181 66.824 116.381 69.704 } (um)
+Cell byte_controller/bit_controller/sub_260/U1 rect: { 111.808 64.571 113.728 67.451 } (um)
+
+Cell byte_controller/bit_controller/U158 and Cell byte_controller/bit_controller/sub_260/U22 overlap.
+Cell byte_controller/bit_controller/U158 rect: { 100.228 61.718 103.428 64.598 } (um)
+Cell byte_controller/bit_controller/sub_260/U22 rect: { 102.323 59.411 104.243 62.291 } (um)
+
+Cell byte_controller/bit_controller/U158 and Cell byte_controller/bit_controller/sub_260/U19 overlap.
+Cell byte_controller/bit_controller/U158 rect: { 100.228 61.718 103.428 64.598 } (um)
+Cell byte_controller/bit_controller/sub_260/U19 rect: { 97.034 59.429 100.554 62.309 } (um)
+
+Cell U249 and Cell ctr_reg_2_ overlap.
+Cell U249 rect: { 69.037 13.509 72.237 16.389 } (um)
+Cell ctr_reg_2_ rect: { 65.420 16.005 76.620 18.884 } (um)
+
+Cell byte_controller/U92 and Cell byte_controller/U96 overlap.
+Cell byte_controller/U92 rect: { 13.329 33.546 16.529 36.426 } (um)
+Cell byte_controller/U96 rect: { 11.841 32.278 15.041 35.158 } (um)
+
+Cell byte_controller/U96 and Cell byte_controller/c_state_reg_1_ overlap.
+Cell byte_controller/U96 rect: { 11.841 32.278 15.041 35.158 } (um)
+Cell byte_controller/c_state_reg_1_ rect: { 0.813 31.198 12.013 34.078 } (um)
+
+Cell byte_controller/bit_controller/U112 and Cell byte_controller/bit_controller/U28 overlap.
+Cell byte_controller/bit_controller/U112 rect: { 70.796 96.232 73.996 99.112 } (um)
+Cell byte_controller/bit_controller/U28 rect: { 72.508 98.759 74.428 101.639 } (um)
+
+Cell byte_controller/bit_controller/U112 and Cell byte_controller/bit_controller/U14 overlap.
+Cell byte_controller/bit_controller/U112 rect: { 70.796 96.232 73.996 99.112 } (um)
+Cell byte_controller/bit_controller/U14 rect: { 73.366 96.835 75.286 99.715 } (um)
+
+Cell byte_controller/bit_controller/U112 and Cell byte_controller/bit_controller/U131 overlap.
+Cell byte_controller/bit_controller/U112 rect: { 70.796 96.232 73.996 99.112 } (um)
+Cell byte_controller/bit_controller/U131 rect: { 68.334 93.859 71.214 96.739 } (um)
+
+Cell byte_controller/bit_controller/U130 and Cell byte_controller/bit_controller/dscl_oen_reg overlap.
+Cell byte_controller/bit_controller/U130 rect: { 53.194 114.617 56.394 117.497 } (um)
+Cell byte_controller/bit_controller/dscl_oen_reg rect: { 53.388 112.575 62.028 115.455 } (um)
+
+Cell U226 and Cell U242 overlap.
+Cell U226 rect: { 71.062 36.147 76.183 39.027 } (um)
+Cell U242 rect: { 67.296 36.549 71.776 39.429 } (um)
+
+Cell U228 and Cell U233 overlap.
+Cell U228 rect: { 84.400 36.333 89.520 39.213 } (um)
+Cell U233 rect: { 80.289 38.472 84.769 41.352 } (um)
+
+Cell U228 and Cell U244 overlap.
+Cell U228 rect: { 84.400 36.333 89.520 39.213 } (um)
+Cell U244 rect: { 87.704 34.720 90.264 37.600 } (um)
+
+Cell U214 and Cell U242 overlap.
+Cell U214 rect: { 65.220 34.555 69.060 37.435 } (um)
+Cell U242 rect: { 67.296 36.549 71.776 39.429 } (um)
+
+Cell U214 and Cell ctr_reg_7_ overlap.
+Cell U214 rect: { 65.220 34.555 69.060 37.435 } (um)
+Cell ctr_reg_7_ rect: { 54.138 34.188 65.338 37.069 } (um)
+
+Cell U222 and Cell U239 overlap.
+Cell U222 rect: { 60.378 25.038 64.218 27.918 } (um)
+Cell U239 rect: { 63.928 23.322 67.768 26.202 } (um)
+
+Cell U232 and Cell U241 overlap.
+Cell U232 rect: { 81.740 28.827 85.580 31.707 } (um)
+Cell U241 rect: { 83.312 31.163 85.873 34.043 } (um)
+
+Cell byte_controller/U76 and Cell byte_controller/U95 overlap.
+Cell byte_controller/U76 rect: { 17.614 40.721 21.454 43.601 } (um)
+Cell byte_controller/U95 rect: { 16.560 43.518 19.440 46.398 } (um)
+
+Cell U177 and Cell U178 overlap.
+Cell U177 rect: { 54.201 16.472 56.761 19.352 } (um)
+Cell U178 rect: { 54.115 18.830 57.315 21.710 } (um)
+
+Cell U177 and Cell U263 overlap.
+Cell U177 rect: { 54.201 16.472 56.761 19.352 } (um)
+Cell U263 rect: { 55.299 15.591 57.219 18.471 } (um)
+
+Cell U177 and Cell U262 overlap.
+Cell U177 rect: { 54.201 16.472 56.761 19.352 } (um)
+Cell U262 rect: { 52.907 15.547 54.827 18.427 } (um)
+
+Cell byte_controller/bit_controller/U143 and Cell byte_controller/bit_controller/U145 overlap.
+Cell byte_controller/bit_controller/U143 rect: { 15.223 113.631 17.782 116.511 } (um)
+Cell byte_controller/bit_controller/U145 rect: { 14.742 112.812 17.302 115.692 } (um)
+
+Cell byte_controller/bit_controller/U143 and Cell byte_controller/bit_controller/U64 overlap.
+Cell byte_controller/bit_controller/U143 rect: { 15.223 113.631 17.782 116.511 } (um)
+Cell byte_controller/bit_controller/U64 rect: { 14.297 113.413 18.777 116.293 } (um)
+
+Cell byte_controller/bit_controller/U145 and Cell byte_controller/bit_controller/U64 overlap.
+Cell byte_controller/bit_controller/U145 rect: { 14.742 112.812 17.302 115.692 } (um)
+Cell byte_controller/bit_controller/U64 rect: { 14.297 113.413 18.777 116.293 } (um)
+
+Cell U248 and Cell ctr_reg_2_ overlap.
+Cell U248 rect: { 62.236 15.255 65.436 18.135 } (um)
+Cell ctr_reg_2_ rect: { 65.420 16.005 76.620 18.884 } (um)
+
+Cell byte_controller/bit_controller/U111 and Cell byte_controller/bit_controller/U74 overlap.
+Cell byte_controller/bit_controller/U111 rect: { 95.162 95.233 98.682 98.113 } (um)
+Cell byte_controller/bit_controller/U74 rect: { 97.001 97.836 101.161 100.716 } (um)
+
+Cell byte_controller/bit_controller/U125 and Cell byte_controller/bit_controller/sub_228/U35 overlap.
+Cell byte_controller/bit_controller/U125 rect: { 23.374 78.097 26.894 80.977 } (um)
+Cell byte_controller/bit_controller/sub_228/U35 rect: { 23.224 80.266 25.144 83.146 } (um)
+
+Cell byte_controller/bit_controller/U126 and Cell byte_controller/bit_controller/sub_228/U7 overlap.
+Cell byte_controller/bit_controller/U126 rect: { 46.925 99.176 50.445 102.056 } (um)
+Cell byte_controller/bit_controller/sub_228/U7 rect: { 45.150 100.772 47.070 103.652 } (um)
+
+Cell byte_controller/bit_controller/U126 and Cell byte_controller/bit_controller/sub_228/U30 overlap.
+Cell byte_controller/bit_controller/U126 rect: { 46.925 99.176 50.445 102.056 } (um)
+Cell byte_controller/bit_controller/sub_228/U30 rect: { 43.862 102.027 47.382 104.907 } (um)
+
+Cell byte_controller/bit_controller/U127 and Cell byte_controller/bit_controller/sub_228/U1 overlap.
+Cell byte_controller/bit_controller/U127 rect: { 41.985 80.604 45.505 83.484 } (um)
+Cell byte_controller/bit_controller/sub_228/U1 rect: { 42.708 81.478 44.628 84.358 } (um)
+
+Cell byte_controller/bit_controller/U127 and Cell byte_controller/bit_controller/sub_228/U26 overlap.
+Cell byte_controller/bit_controller/U127 rect: { 41.985 80.604 45.505 83.484 } (um)
+Cell byte_controller/bit_controller/sub_228/U26 rect: { 42.187 78.912 45.707 81.792 } (um)
+
+Cell byte_controller/bit_controller/sub_260/U23 and Cell byte_controller/bit_controller/sub_260/U5 overlap.
+Cell byte_controller/bit_controller/sub_260/U23 rect: { 102.649 57.514 107.449 60.394 } (um)
+Cell byte_controller/bit_controller/sub_260/U5 rect: { 101.300 56.395 103.221 59.275 } (um)
+
+
+-----------------------------------------------------------------
+Category:    [movable]    A cell is not aligned with a site.
+Subcategory: [movable]    A cell is not aligned with the base site.
+-----------------------------------------------------------------
+
+Cell U250 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U86 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U98 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U121 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U122 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U29 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U49 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U9 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U243 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U245 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U246 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U247 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U74 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U141 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U32 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U134 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U65 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U66 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U68 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U69 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U70 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U71 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U73 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U87 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U102 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U70 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U82 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U87 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U12 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U13 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U14 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U15 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U16 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U17 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U18 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U19 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U20 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U24 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U26 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U14 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U15 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U16 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U17 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U18 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U19 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U20 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U21 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U22 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U26 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U28 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U30 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U32 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U166 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U167 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U168 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U169 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U170 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U171 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U201 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U202 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U203 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U204 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U205 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U206 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U207 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U208 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U209 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U210 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U62 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U63 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U64 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U99 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U100 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U59 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U60 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U61 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U62 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U63 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U64 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U142 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U144 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U53 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U54 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U55 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U56 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U57 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U58 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U59 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U60 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U92 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U93 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U94 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U95 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U96 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U97 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U98 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U99 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U100 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U101 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U102 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U103 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U104 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U105 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U106 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U107 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U172 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U173 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U174 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U175 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U176 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U179 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U180 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U181 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U183 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U184 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U185 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U186 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U187 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U188 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U189 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U190 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U192 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U193 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U194 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U195 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U196 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U197 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U198 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U199 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U61 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U75 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U90 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U67 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U68 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U73 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U74 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U75 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U76 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U77 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U78 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U79 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U80 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U81 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U84 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U85 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U86 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U90 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U91 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U108 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U113 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U114 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U115 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U116 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U117 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U118 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U119 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U120 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U146 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U147 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U148 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U149 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U150 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U151 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U152 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U200 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U251 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U213 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U217 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U221 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U225 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U227 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U229 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U231 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U235 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U215 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U219 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U223 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U233 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U242 is not on a base site row or is misaligned with the sites in the row.
+
+Cell ctr_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell ctr_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell ctr_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell ctr_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell ctr_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell ctr_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell ctr_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell ctr_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell txr_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell txr_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell txr_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell txr_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell txr_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell txr_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell txr_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell txr_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell cr_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell cr_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell cr_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell cr_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell cr_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell cr_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell cr_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell al_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell rxack_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell tip_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell irq_flag_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_inta_o_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/ld_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/sr_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/sr_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/sr_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/sr_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/sr_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/sr_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/sr_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/core_txd_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/shift_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/sr_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/dcnt_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/dcnt_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/dcnt_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/c_state_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/c_state_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/cmd_ack_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/core_cmd_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/core_cmd_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/c_state_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/c_state_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/core_cmd_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/core_cmd_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/ack_out_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cSDA_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cSDA_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cSCL_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cSCL_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_8_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_9_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_10_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_11_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_12_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/filter_cnt_reg_13_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sta_condition_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sto_condition_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/busy_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/slave_wait_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cmd_stop_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_13_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_14_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_15_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sda_chk_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_16_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_8_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_9_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_10_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_11_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/c_state_reg_12_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/al_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cmd_ack_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_15_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_8_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_9_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_10_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_11_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_12_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_13_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/cnt_reg_14_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/c_state_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell cr_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_15_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_14_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_13_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_12_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_11_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_10_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_9_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_8_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell prer_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/fSCL_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/fSCL_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/fSCL_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/fSDA_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/fSDA_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/fSDA_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sSCL_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/dSCL_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sSDA_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/dSDA_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/scl_oen_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/clk_en_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sda_oen_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_dat_o_reg_6_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_dat_o_reg_4_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_dat_o_reg_3_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_dat_o_reg_2_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_dat_o_reg_5_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_dat_o_reg_7_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_dat_o_reg_1_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_dat_o_reg_0_ is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/dout_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/dscl_oen_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell wb_ack_o_reg is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U1 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U2 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U3 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U4 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U5 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U6 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U7 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U8 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U9 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U10 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U11 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U25 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U1 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U2 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U3 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U4 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U5 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U6 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U7 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U8 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U9 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U10 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U11 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U12 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U13 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U27 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U3 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U4 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U6 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U7 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U8 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U9 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U10 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U11 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U15 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U17 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U19 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U20 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U24 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U27 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U28 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U30 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U43 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U45 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U46 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U47 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U3 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U4 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U8 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U10 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U11 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U12 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U13 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U14 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U17 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U27 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U28 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U32 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U33 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U34 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U35 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U36 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U252 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U253 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U254 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U255 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U257 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U258 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U260 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U267 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U268 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U269 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U14 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U18 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U23 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U26 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U31 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U34 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U42 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U15 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U19 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U20 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U21 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U22 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U24 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U25 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U31 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U256 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U270 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U271 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U272 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U182 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U211 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U212 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U216 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U220 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U230 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U234 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U240 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U241 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U244 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U67 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U72 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U79 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U80 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U83 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U85 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U88 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U94 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U97 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U101 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U69 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U89 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U129 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U138 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U77 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U78 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U84 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U66 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U72 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U109 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U132 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U133 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U155 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U157 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U21 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U22 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U27 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U28 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U29 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U30 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U31 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U32 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U33 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U34 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U35 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U36 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U37 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U24 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U29 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U31 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U33 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U34 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U35 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U36 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U37 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U38 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U39 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U40 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U41 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U42 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U43 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U12 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U13 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U16 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U22 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U25 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U33 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U35 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U36 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U37 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U38 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U39 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U40 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U41 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U44 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U48 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U5 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U6 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U7 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U16 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U18 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U23 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U26 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U29 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U30 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U37 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U259 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U261 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U262 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U263 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U265 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U266 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U273 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U236 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U237 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U238 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U95 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U131 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U136 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U139 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U178 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U83 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U88 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U110 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U135 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U137 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U140 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U156 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U158 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U249 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U92 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U96 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U71 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U112 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U130 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U264 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U224 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U226 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U228 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U214 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U218 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U222 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U232 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U239 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U91 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U76 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U65 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/U93 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U177 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U143 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U145 is not on a base site row or is misaligned with the sites in the row.
+
+Cell U248 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U111 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U124 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U125 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U126 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U127 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/U128 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U23 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U25 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_260/U21 is not on a base site row or is misaligned with the sites in the row.
+
+Cell byte_controller/bit_controller/sub_228/U23 is not on a base site row or is misaligned with the sites in the row.
+
+
+
+
+check_legality for block design i2c_master_top failed!
+
+check_legality failed.
+
+**************************
+
+0
